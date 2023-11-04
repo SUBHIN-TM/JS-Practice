@@ -84,3 +84,44 @@
 //   }
   
 
+
+//12.just print the positive numbers
+let a=[1, 5.2, 4, 0, -1] 
+function display(a){
+const result=a.filter((data) => data > 0);
+console.log(result);
+}
+display(a)
+console.log("\n");
+
+
+
+////13.Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative or non-integer. If the array does not contain any numbers then you should return 0.
+let b=[1, 5.2, 4, 0, -1] //OP SHOULD BE 9.2
+
+function sum(x){
+    if(x.length==0){
+        return 0
+    }
+    return x.reduce((total,number)=> total + number,0)
+
+}
+console.log(sum(b));
+console.log("\n");
+
+
+
+/*14.You get an array of numbers, return the sum of all of the positives ones.
+Example [1,-4,7,12] => 1 + 7 + 12 = 20
+Note: if there is nothing to sum, the sum is default to 0.*/
+var c=[1,-4,7,12]
+ function add(x){
+    return x.reduce((total,number) => {
+        if(number >= 0){
+           return total + number;
+        }else{
+            return total
+        }
+    },0)
+ }
+console.log(add(c));
