@@ -125,3 +125,16 @@ var c=[1,-4,7,12]
     },0)
  }
 console.log(add(c));
+console.log("\n");
+
+
+ /*15.ask:Given a list of integers, determine whether the sum of its elements is odd or even.
+Give your answer as a string matching "odd" or "even".
+If the input array is empty consider it as: [0] (array with a zero). */
+
+
+console.log(oddOrEven([]));
+function oddOrEven(array) {
+    const result =array.reduce((total,data) => total + data,0)
+    return array.length == 0 ? "even": result %2 ==0 ? "even":"odd";
+ }
