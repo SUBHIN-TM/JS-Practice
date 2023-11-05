@@ -138,3 +138,16 @@ function oddOrEven(array) {
     const result =array.reduce((total,data) => total + data,0)
     return array.length == 0 ? "even": result %2 ==0 ? "even":"odd";
  }
+ console.log("\n");
+
+
+ /*16.
+makeNegative(1);    // return -1
+makeNegative(-5);   // return -5
+makeNegative(0);    // return 0
+makeNegative(0.12); // return -0.12 */
+
+const check = (x) => x<0?x:0-x
+console.log(check(0));
+ 
+
