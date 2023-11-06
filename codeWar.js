@@ -146,8 +146,47 @@ makeNegative(1);    // return -1
 makeNegative(-5);   // return -5
 makeNegative(0);    // return 0
 makeNegative(0.12); // return -0.12 */
-
 const check = (x) => x<0?x:0-x
 console.log(check(0));
+console.log("\n");
+
+
+/*17. You are going to be given a word. Your job is to return the middle character of the word. 
+If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters. */
+// function getMiddle(s)
+// {
+//    let array= s.split("")
+//    let index=Math.floor(array.length/2)
+//    if(array.length%2!=0){
+//     return array[index]
+//    }else{
+//     return array.slice(index,index +2).join('')
+//    }
+  
+// }
+
+// console.log(getMiddle("haah"));
+
+function getMiddle(s) {
+    let array = s.split("");
+    let length = Math.floor(array.length / 2);
+  
+    if (array.length % 2 !== 0) {
+      return array[length];
+    } else {
+      return array.slice(length -1, length + 2).join('');//length value -1 get the crct index slice(index and 1 extra to slice next)
+    }
+  }
+  
+  console.log(getMiddle("haah"));
+  
+  
+  
+  
+  
+  
+  
+
+
  
 
