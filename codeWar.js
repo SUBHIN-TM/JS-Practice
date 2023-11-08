@@ -216,12 +216,25 @@ patrick feeney => P.F
 // Given [34, -345, -1, 100] your solution will return -345
 // You can assume, for the purpose of this kata, that the supplied array will not be empty.
 
+// let k=[2,3,4,1,-55,777,-888]
 
-let k=[2,3,4,1,-55,777,-888]
-
- function findSmallestInt(args) {
+//  function findSmallestInt(args) {
    
-  }
+//   }
 
-  console.log(findSmallestInt(k));
+//   console.log(findSmallestInt(k));
 
+
+// 21.Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+// Return your answer as a number.
+
+console.log(sumMix([1,"2"]));
+function sumMix(x){
+  return x.reduce((total,data) => {
+   let result = total + Number(data) //Caonvert data to numbr
+   return result
+
+  },0)
+  
+
+}
