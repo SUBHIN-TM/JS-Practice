@@ -228,13 +228,28 @@ patrick feeney => P.F
 // 21.Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
 // Return your answer as a number.
 
-console.log(sumMix([1,"2"]));
-function sumMix(x){
-  return x.reduce((total,data) => {
-   let result = total + Number(data) //Caonvert data to numbr
-   return result
+// console.log(sumMix([1,"2"]));
+// function sumMix(x){
+//   return x.reduce((total,data) => {
+//    let result = total + Number(data) //Caonvert data to numbr
+//    return result
 
-  },0)
+//   },0)
   
+
+// }
+
+
+/*Create a function which answers the question "Are you playing banjo?".
+If your name starts with the letter "R" or lower case "r", you are playing banjo!
+The function takes a name as its only argument, and returns one of the following strings:
+name + " plays banjo" 
+name + " does not play banjo */
+let k="Rubhin"
+console.log(areYouPlayingBanjo(k))
+
+function areYouPlayingBanjo(name) {
+   return name.charAt(0)=== "r"|| name.charAt(0)=== "R" ? `${name} plays banjo `:` ${name} does not play banjo`
+   const areYouPlayingBanjo = (n) => n.charAt(0)=== "r"|| n.charAt(0)=== "R" ? `${n} plays banjo`:`${n} does not play banjo`// ARROW FUNCTION 
 
 }
