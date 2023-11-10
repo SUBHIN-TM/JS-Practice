@@ -240,16 +240,37 @@ patrick feeney => P.F
 // }
 
 
-/*Create a function which answers the question "Are you playing banjo?".
+/*22.Create a function which answers the question "Are you playing banjo?".
 If your name starts with the letter "R" or lower case "r", you are playing banjo!
 The function takes a name as its only argument, and returns one of the following strings:
 name + " plays banjo" 
 name + " does not play banjo */
-let k="Rubhin"
-console.log(areYouPlayingBanjo(k))
+// let k="Rubhin"
+// console.log(areYouPlayingBanjo(k))
 
-function areYouPlayingBanjo(name) {
-   return name.charAt(0)=== "r"|| name.charAt(0)=== "R" ? `${name} plays banjo `:` ${name} does not play banjo`
-   const areYouPlayingBanjo = (n) => n.charAt(0)=== "r"|| n.charAt(0)=== "R" ? `${n} plays banjo`:`${n} does not play banjo`// ARROW FUNCTION 
+// function areYouPlayingBanjo(name) {
+//    return name.charAt(0)=== "r"|| name.charAt(0)=== "R" ? `${name} plays banjo `:` ${name} does not play banjo`
+//    const areYouPlayingBanjo = (n) => n.charAt(0)=== "r"|| n.charAt(0)=== "R" ? `${n} plays banjo`:`${n} does not play banjo`// ARROW FUNCTION 
 
+// }
+
+
+
+/*23.Implement a function which convert the given boolean value into its string representation.
+Note: Only valid inputs will be given.
+*/
+console.log(booleanToString(true));
+function booleanToString(b){
+return b.toString()
 }
+
+
+/* 24The cockroach is one of the fastest insects. Write a function which takes its speed in km per hour and returns it in cm per second, rounded down to the integer (= floored).
+For example:
+1.08 --> 30
+*/
+
+function cockroachSpeed(s) {
+  return Math.floor(s*(5/18)*100) 
+  }
+  console.log(cockroachSpeed(1.08));
