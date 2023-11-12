@@ -259,10 +259,10 @@ name + " does not play banjo */
 /*23.Implement a function which convert the given boolean value into its string representation.
 Note: Only valid inputs will be given.
 */
-console.log(booleanToString(true));
-function booleanToString(b){
-return b.toString()
-}
+// console.log(booleanToString(true));
+// function booleanToString(b){
+// return b.toString()
+// }
 
 
 /* 24The cockroach is one of the fastest insects. Write a function which takes its speed in km per hour and returns it in cm per second, rounded down to the integer (= floored).
@@ -270,7 +270,24 @@ For example:
 1.08 --> 30
 */
 
-function cockroachSpeed(s) {
-  return Math.floor(s*(5/18)*100) 
+// function cockroachSpeed(s) {
+//   return Math.floor(s*(5/18)*100) 
+//   }
+//   console.log(cockroachSpeed(1.08));
+
+
+/* 25.You're writing code to control your town's traffic lights. You need a function to handle each change from green, to yellow, to red, and then to green again.
+Complete the function that takes a string as an argument representing the current state of the light and returns a string representing the state the light should change to.
+For example, when the input is green, output should be yellow.
+*/
+function updateLight(current) {
+  
+  if(current==="green"){
+    return "yellow"
+  }else if(current==="yellow"){
+    return "red"
+  }else{
+    return "green"
   }
-  console.log(cockroachSpeed(1.08));
+
+}
