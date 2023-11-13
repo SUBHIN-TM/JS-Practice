@@ -280,14 +280,37 @@ For example:
 Complete the function that takes a string as an argument representing the current state of the light and returns a string representing the state the light should change to.
 For example, when the input is green, output should be yellow.
 */
-function updateLight(current) {
+// function updateLight(current) {
   
-  if(current==="green"){
-    return "yellow"
-  }else if(current==="yellow"){
-    return "red"
-  }else{
-    return "green"
-  }
+//   if(current==="green"){
+//     return "yellow"
+//   }else if(current==="yellow"){
+//     return "red"
+//   }else{
+//     return "green"
+//   }
 
+// }
+
+/*26. Write a function which converts the input string to uppercase.
+*/
+function makeUpperCase(str) {
+  return str.toUpperCase()
 }
+
+console.log(makeUpperCase("subhin"));
+
+
+
+/*27. Simple, given a string of words, return the length of the shortest word(s).
+String will never be empty and you do not need to account for different data types.
+ex = assert.strictEqual(findShort("bitcoin take over the world maybe who knows perhaps"), 3);
+*/
+
+
+function findShort(s){
+  const word= s.split(" ")
+  const length= word.map((data) => data.length)
+  return Math.min(...length) //LENGTH HAS[7,4,4,3...] BY USING SPREAD OPERATOR WE CAN SPREAD THE ENTIRE ELEMENTS OF THAT ARRAY
+}
+console.log(findShort('bitcoin take over the world maybe who knows perhaps'));
