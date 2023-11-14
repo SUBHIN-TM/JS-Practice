@@ -292,13 +292,15 @@ For example, when the input is green, output should be yellow.
 
 // }
 
+
+
 /*26. Write a function which converts the input string to uppercase.
 */
-function makeUpperCase(str) {
-  return str.toUpperCase()
-}
+// function makeUpperCase(str) {
+//   return str.toUpperCase()
+// }
 
-console.log(makeUpperCase("subhin"));
+// console.log(makeUpperCase("subhin"));
 
 
 
@@ -308,9 +310,38 @@ ex = assert.strictEqual(findShort("bitcoin take over the world maybe who knows p
 */
 
 
-function findShort(s){
-  const word= s.split(" ")
-  const length= word.map((data) => data.length)
-  return Math.min(...length) //LENGTH HAS[7,4,4,3...] BY USING SPREAD OPERATOR WE CAN SPREAD THE ENTIRE ELEMENTS OF THAT ARRAY
+// function findShort(s){
+//   const word= s.split(" ")
+//   const length= word.map((data) => data.length)
+//   return Math.min(...length) //LENGTH HAS[7,4,4,3...] BY USING SPREAD OPERATOR WE CAN SPREAD THE ENTIRE ELEMENTS OF THAT ARRAY
+// }
+// console.log(findShort('bitcoin take over the world maybe who knows perhaps'));
+
+
+
+/*28. Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
+invert([1,-2,3,-4,5]) == [-1,2,-3,4,
+*/
+
+function invert(array) {
+  return  array.map((data) => 0- data)
 }
-console.log(findShort('bitcoin take over the world maybe who knows perhaps'));
+
+let invert = (array) => array.map((data) => 0- data) 
+console.log(invert([1,-2,3,4,5]));
+
+
+/*28.Complete the square sum function so that it squares each number passed into it and then sums the results together.
+  for [1, 2, 2] it should return 9 because  1sq+2qr+2sqr
+*/
+
+function squareSum(numbers){
+  return numbers.map((data) => {
+    return data*data
+  }).reduce((total,data) => {
+    return total + data
+  },0)
+}
+
+console.log(squareSum([1,2,2]))
