@@ -324,24 +324,39 @@ invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
 invert([1,-2,3,-4,5]) == [-1,2,-3,4,
 */
 
-function invert(array) {
-  return  array.map((data) => 0- data)
-}
+// function invert(array) {
+//   return  array.map((data) => 0- data)
+// }
 
-let invert = (array) => array.map((data) => 0- data) 
-console.log(invert([1,-2,3,4,5]));
+// let invert = (array) => array.map((data) => 0- data) 
+// console.log(invert([1,-2,3,4,5]));
 
 
-/*28.Complete the square sum function so that it squares each number passed into it and then sums the results together.
+/*29.Complete the square sum function so that it squares each number passed into it and then sums the results together.
   for [1, 2, 2] it should return 9 because  1sq+2qr+2sqr
 */
 
-function squareSum(numbers){
-  return numbers.map((data) => {
-    return data*data
-  }).reduce((total,data) => {
-    return total + data
-  },0)
+// function squareSum(numbers){
+//   return numbers.map((data) => {
+//     return data*data
+//   }).reduce((total,data) => {
+//     return total + data
+//   },0)
+// }
+
+// console.log(squareSum([1,2,2]))
+
+/*30.Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+Examples:
+solution('abc', 'bc') // returns true
+solution('abc', 'd') // returns false
+*/
+function solution(str, ending){
+  if(str.endsWith(ending)){
+    return true
+  }else{
+    return false
+  }
 }
 
-console.log(squareSum([1,2,2]))
+console.log(solution("abc","d"));
