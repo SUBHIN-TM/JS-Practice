@@ -346,17 +346,38 @@ invert([1,-2,3,-4,5]) == [-1,2,-3,4,
 
 // console.log(squareSum([1,2,2]))
 
+
 /*30.Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
 Examples:
 solution('abc', 'bc') // returns true
 solution('abc', 'd') // returns false
 */
-function solution(str, ending){
-  if(str.endsWith(ending)){
-    return true
-  }else{
-    return false
+// function solution(str, ending){
+//   if(str.endsWith(ending)){
+//     return true
+//   }else{
+//     return false
+//   }
+// }
+
+// console.log(solution("abc","d"));
+
+
+
+
+/*30.Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
+*/
+
+
+function boolToWord(bool) {
+  if (bool === true) {
+    return 'Yes';
+  } else {
+    return 'No';
   }
+  return bool=== true?'Yes':'No'
 }
 
-console.log(solution("abc","d"));
+console.log(boolToWord(true));
+
+
