@@ -367,17 +367,41 @@ solution('abc', 'd') // returns false
 
 /*30.Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
 */
+// function boolToWord(bool) {
+//   if (bool === true) {
+//     return 'Yes';
+//   } else {
+//     return 'No';
+//   }
+//   return bool=== true?'Yes':'No'
+// }
+
+// console.log(boolToWord(true));
 
 
-function boolToWord(bool) {
-  if (bool === true) {
-    return 'Yes';
-  } else {
-    return 'No';
+
+/*31.replace all 5 and above with 1 and less than 5 with 0
+*/
+
+// return x.toString().split('').map((value) => {
+//   if (parseInt(value) >= 5) {
+//     return '1';
+//   } else {
+//     return '0';
+//   }
+// }).join('');
+
+
+/*32.Your task is to find the first element of an array that is not consecutive.
+By not consecutive we mean not exactly 1 larger than the previous element of the array.
+E.g. If we have an array [1,2,3,4,6,7,8] then 1 then 2 then 3 then 4 are all consecutive but 6 is not, so that's the first non-consecutive nu
+*/
+function firstNonConsecutive (arr) {
+  for(let i=1;i<arr.length;i++){
+    if(arr[i] !== arr[i-1]+1){
+      return arr[i]
+    }
   }
-  return bool=== true?'Yes':'No'
+  return null
 }
-
-console.log(boolToWord(true));
-
-
+console.log(firstNonConsecutive([1,2,3,4,6,7,8,]));
