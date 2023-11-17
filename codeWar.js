@@ -396,12 +396,32 @@ solution('abc', 'd') // returns false
 By not consecutive we mean not exactly 1 larger than the previous element of the array.
 E.g. If we have an array [1,2,3,4,6,7,8] then 1 then 2 then 3 then 4 are all consecutive but 6 is not, so that's the first non-consecutive nu
 */
-function firstNonConsecutive (arr) {
-  for(let i=1;i<arr.length;i++){
-    if(arr[i] !== arr[i-1]+1){
-      return arr[i]
-    }
+// function firstNonConsecutive (arr) {
+//   for(let i=1;i<arr.length;i++){
+//     if(arr[i] !== arr[i-1]+1){
+//       return arr[i]
+//     }
+//   }
+//   return null
+// }
+// console.log(firstNonConsecutive([1,2,3,4,6,7,8,]));
+
+
+
+/*32.Write a function named setAlarm/set_alarm/set-alarm/setalarm (depending on language) which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
+The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise. Examples:
+employed | vacation 
+true     | true     => false
+true     | false    => true
+false    | true     => false
+false    | false    => false
+*/
+function setAlarm(employed, vacation){
+  if(employed == true && vacation == false){
+    return true
   }
-  return null
+  return false
+  //(employed === true && vacation === false) ? true : false
 }
-console.log(firstNonConsecutive([1,2,3,4,6,7,8,]));
+
+console.log(setAlarm(true,false));
