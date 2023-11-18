@@ -465,3 +465,10 @@ function sumArray(array) {
 
 
 console.log(sumArray([6, 2, 1, 8, 10]));
+
+
+/*35.Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+*/
+function removeExclamationMarks(s) {
+  return s.replaceAll("!","")
+}
