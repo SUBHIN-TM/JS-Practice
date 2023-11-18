@@ -11,7 +11,7 @@
 // //   return dna.replaceAll("T","U")
 // // }
 //  let DNAtoRNA=(dna)=> dna.replaceAll("T","U")
- 
+
 
 
 // //3.function paperwork(n, m) {
@@ -21,7 +21,7 @@
 //   else{
 //     return 0;
 //   }
- 
+
 
 
 // //4.if even number then mult with 8 and if not mult with odd
@@ -51,7 +51,7 @@
 // var countSheep = function (num){
 //     let result=""
 //     for(let i=1;i<=num;i++){
-      
+
 //       result += `${i} sheep...`;
 //     }
 //     return result;
@@ -84,7 +84,7 @@
 //     //your code here
 //     return friends.filter((value) => value.length==4)
 //   }
-  
+
 
 
 //12.just print the positive numbers
@@ -130,7 +130,7 @@ Note: if there is nothing to sum, the sum is default to 0.*/
 // console.log("\n");
 
 
- /*15.ask:Given a list of integers, determine whether the sum of its elements is odd or even.
+/*15.ask:Given a list of integers, determine whether the sum of its elements is odd or even.
 Give your answer as a string matching "odd" or "even".
 If the input array is empty consider it as: [0] (array with a zero). */
 
@@ -143,7 +143,7 @@ If the input array is empty consider it as: [0] (array with a zero). */
 //  console.log("\n");
 
 
- /*16.
+/*16.
 makeNegative(1);    // return -1
 makeNegative(-5);   // return -5
 makeNegative(0);    // return 0
@@ -160,26 +160,26 @@ If the word's length is odd, return the middle character. If the word's length i
 // function getMiddle(s) {
 //     let array = s.split("");
 //     let length = Math.floor(array.length / 2);
-  
+
 //     if (array.length % 2 !== 0) {
 //       return array[length];
 //     } else {
 //       return array.slice(length -1, length + 2).join('');//length value -1 get the crct index slice(index and 1 extra to slice next)
 //     }
 //   }
-  
+
 //   console.log(getMiddle("haah"));
-  
 
 
 
-  
 
-  
-  /*18.Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
+
+
+
+/*18.Write a program that finds the summation of every number from 1 to num. The number will always be a positive integer greater than 0.
 2 -> 3 (1 + 2)
 8 -> 36 (1 + 2 + 3 + 4 + 5 + 6 + 7 + 8)
-  */
+*/
 
 // var summation = function (num) {
 //     let k=0;
@@ -189,12 +189,12 @@ If the word's length is odd, return the middle character. If the word's length i
 //    return k
 //   }
 //   console.log(summation(2));
-  
-  
-  
-  
-  /*19.
-  Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+
+
+
+
+/*19.
+Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
 The output should be two capital letters with a dot separating them.
 It should look like this:
 Sam Harris => S.H
@@ -209,7 +209,7 @@ patrick feeney => P.F
 //   return `${firstName}.${lastName};`
 // }
 // console.log(abbrevName("subhin Akshaya"));
- 
+
 //.20. Given an array of integers your solution should find the smallest integer.
 // For example:
 // Given [34, 15, 88, 2] your solution will return 2
@@ -219,7 +219,7 @@ patrick feeney => P.F
 // let k=[2,3,4,1,-55,777,-888]
 
 //  function findSmallestInt(args) {
-   
+
 //   }
 
 //   console.log(findSmallestInt(k));
@@ -235,7 +235,7 @@ patrick feeney => P.F
 //    return result
 
 //   },0)
-  
+
 
 // }
 
@@ -281,7 +281,7 @@ Complete the function that takes a string as an argument representing the curren
 For example, when the input is green, output should be yellow.
 */
 // function updateLight(current) {
-  
+
 //   if(current==="green"){
 //     return "yellow"
 //   }else if(current==="yellow"){
@@ -408,7 +408,7 @@ E.g. If we have an array [1,2,3,4,6,7,8] then 1 then 2 then 3 then 4 are all con
 
 
 
-/*32.Write a function named setAlarm/set_alarm/set-alarm/setalarm (depending on language) which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
+/*33.Write a function named setAlarm/set_alarm/set-alarm/setalarm (depending on language) which receives two parameters. The first parameter, employed, is true whenever you are employed and the second parameter, vacation is true whenever you are on vacation.
 The function should return true if you are employed and not on vacation (because these are the circumstances under which you need to set an alarm). It should return false otherwise. Examples:
 employed | vacation 
 true     | true     => false
@@ -416,12 +416,52 @@ true     | false    => true
 false    | true     => false
 false    | false    => false
 */
-function setAlarm(employed, vacation){
-  if(employed == true && vacation == false){
-    return true
-  }
-  return false
-  //(employed === true && vacation === false) ? true : false
-}
+// function setAlarm(employed, vacation){
+//   if(employed == true && vacation == false){
+//     return true
+//   }
+//   return false
+//   //(employed === true && vacation === false) ? true : false
+// }
 
-console.log(setAlarm(true,false));
+// console.log(setAlarm(true,false));
+
+
+
+/*34Sum all the numbers of a given array ( cq. list ), except the highest and the lowest element ( by value, not by index! ).
+The highest or lowest element respectively is a single element at each edge, even if there are more than one with the same value.
+Mind the input validation.
+*/
+function sumArray(array) {
+
+  let sort = array.sort((a, b) => {
+    return a - b
+  });
+
+  let filter = sort.filter((value, index) => {
+    return index !== 0 && index !== (sort.length) - 1;
+      
+  })
+   let sum= filter.reduce((total,value) => {
+    return total + value
+
+   },0)
+   return sum
+   
+};
+  
+// METHORD 2
+  
+
+// console.log(sumArray([6, 2, 1, 8, 10]));
+
+function sumArray(array) {
+  if( array==null || array.length === 0){
+    return 0
+  }
+ return array.sort((a, b) => a - b).slice(1,-1).reduce((total,value)=> total+value ,0)
+}
+  // slice(starting index,excluding index)
+
+
+console.log(sumArray([6, 2, 1, 8, 10]));
