@@ -432,43 +432,71 @@ false    | false    => false
 The highest or lowest element respectively is a single element at each edge, even if there are more than one with the same value.
 Mind the input validation.
 */
-function sumArray(array) {
+// function sumArray(array) {
 
-  let sort = array.sort((a, b) => {
-    return a - b
-  });
+//   let sort = array.sort((a, b) => {
+//     return a - b
+//   });
 
-  let filter = sort.filter((value, index) => {
-    return index !== 0 && index !== (sort.length) - 1;
+//   let filter = sort.filter((value, index) => {
+//     return index !== 0 && index !== (sort.length) - 1;
       
-  })
-   let sum= filter.reduce((total,value) => {
-    return total + value
+//   })
+//    let sum= filter.reduce((total,value) => {
+//     return total + value
 
-   },0)
-   return sum
+//    },0)
+//    return sum
    
-};
+// };
   
 // METHORD 2
   
 
 // console.log(sumArray([6, 2, 1, 8, 10]));
 
-function sumArray(array) {
-  if( array==null || array.length === 0){
-    return 0
-  }
- return array.sort((a, b) => a - b).slice(1,-1).reduce((total,value)=> total+value ,0)
-}
-  // slice(starting index,excluding index)
+// function sumArray(array) {
+//   if( array==null || array.length === 0){
+//     return 0
+//   }
+//  return array.sort((a, b) => a - b).slice(1,-1).reduce((total,value)=> total+value ,0)
+// }
+//   // slice(starting index,excluding index)
 
 
-console.log(sumArray([6, 2, 1, 8, 10]));
+// console.log(sumArray([6, 2, 1, 8, 10]));
 
 
-/*35.Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+// /*35.Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+// */
+// function removeExclamationMarks(s) {
+//   return s.replaceAll("!","")
+// }
+
+
+
+
+/* 36.Bob is working as a bus driver. However, he has become extremely popular amongst the city's residents. With so many passengers wanting to get aboard his bus, he sometimes has to face the problem of not enough space left on the bus! He wants you to write a simple program telling him if he will be able to fit all the passengers.
+
+Task Overview:
+You have to write a function that accepts three parameters:
+cap is the amount of people the bus can hold excluding the driver.
+on is the number of people on the bus excluding the driver.
+wait is the number of people waiting to get on to the bus excluding the driver.
+If there is enough space, return 0, and if there isn't, return the number of passengers he can't take.
+Usage Examples:
+cap = 10, on = 5, wait = 5 --> 0 # He can fit all 5 passengers
+cap = 100, on = 60, wait = 50 --> 10 # He can't fit 10 of the 50 wai
 */
-function removeExclamationMarks(s) {
-  return s.replaceAll("!","")
-}
+
+function enough(cap, on, wait) {
+  let k =  cap - (on+wait)
+  // if(k<0){
+  //   return 0 - k
+  // }else{
+  //   return 0
+  // }
+  return k<0? 0-k : 0
+  }
+
+  console.log(enough(20,5,5));
