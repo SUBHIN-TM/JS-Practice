@@ -489,14 +489,48 @@ cap = 10, on = 5, wait = 5 --> 0 # He can fit all 5 passengers
 cap = 100, on = 60, wait = 50 --> 10 # He can't fit 10 of the 50 wai
 */
 
-function enough(cap, on, wait) {
-  let k =  cap - (on+wait)
-  // if(k<0){
-  //   return 0 - k
-  // }else{
-  //   return 0
-  // }
-  return k<0? 0-k : 0
-  }
+// function enough(cap, on, wait) {
+//   let k =  cap - (on+wait)
+//   // if(k<0){
+//   //   return 0 - k
+//   // }else{
+//   //   return 0
+//   // }
+//   return k<0? 0-k : 0
+//   }
 
-  console.log(enough(20,5,5));
+//   console.log(enough(20,5,5));
+
+
+
+
+/*37.Given a string, you have to return a string in which each character (case-sensitive) is repeated once.
+* "String"      -> "SSttrriinngg"
+* "Hello World" -> "HHeelllloo  WWoorrlldd"
+* "1234!_ "     -> "11223344!!__  "
+*/
+
+function doubleChar(str) {
+  console.log(str);
+  const array=str.split("")
+  console.log("after split",array);
+  let result=[]
+  for (let i = 0; i < array.length; i++) {
+    result.push(array[i],array[i])
+    console.log('after push',result);
+  }
+  console.log("join without using invert comma look like",result.join());
+return result.join("") 
+}
+
+console.log(doubleChar("Hello"));
+
+
+// METHOD 2
+function doubleChar(strs) {
+  var result =[]
+ let str=strs.split("")
+ str.map((data) => result.push(data,data))
+  return result.join("")
+ 
+}
