@@ -559,11 +559,29 @@ ARRAYS
 */
 
 
-function howMuchILoveYou(nbPetals) {
-  let n = nbPetals > 6?  (nbPetals - 6 )%6 : nbPetals
-  return n == 1 ? "I love you": n==2 ? "a little": n==3 ? "a lot": n==4 ? 
-    "passionately":  n==5 ? "madly": "not at all";
-  }
+// function howMuchILoveYou(nbPetals) {
+//   let n = nbPetals > 6?  (nbPetals - 6 )%6 : nbPetals
+//   return n == 1 ? "I love you": n==2 ? "a little": n==3 ? "a lot": n==4 ? 
+//     "passionately":  n==5 ? "madly": "not at all";
+//   }
 
-console.log(howMuchILoveYou(18));  
+// console.log(howMuchILoveYou(18));  
 
+
+
+
+/*39.Write a function findNeedle() that takes an array full of junk but containing one "needle"
+After your function finds the needle it should return a message (as a string) that says:
+"found the needle at position " plus the index it found the needle, so:
+Example(Input --> Output)
+*/
+
+
+function findNeedle(haystack) {
+let k= haystack.indexOf('needle')
+return "found the needle at position "+k
+ 
+ 
+}
+
+console.log(findNeedle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"]));
