@@ -510,27 +510,60 @@ cap = 100, on = 60, wait = 50 --> 10 # He can't fit 10 of the 50 wai
 * "1234!_ "     -> "11223344!!__  "
 */
 
-function doubleChar(str) {
-  console.log(str);
-  const array=str.split("")
-  console.log("after split",array);
-  let result=[]
-  for (let i = 0; i < array.length; i++) {
-    result.push(array[i],array[i])
-    console.log('after push',result);
-  }
-  console.log("join without using invert comma look like",result.join());
-return result.join("") 
-}
+// function doubleChar(str) {
+//   console.log(str);
+//   const array=str.split("")
+//   console.log("after split",array);
+//   let result=[]
+//   for (let i = 0; i < array.length; i++) {
+//     result.push(array[i],array[i])
+//     console.log('after push',result);
+//   }
+//   console.log("join without using invert comma look like",result.join());
+// return result.join("") 
+// }
 
-console.log(doubleChar("Hello"));
+// console.log(doubleChar("Hello"));
 
 
-// METHOD 2
-function doubleChar(strs) {
-  var result =[]
- let str=strs.split("")
- str.map((data) => result.push(data,data))
-  return result.join("")
+// // METHOD 2
+// function doubleChar(strs) {
+//   var result =[]
+//  let str=strs.split("")
+//  str.map((data) => result.push(data,data))
+//   return result.join("")
  
-}
+// }
+
+
+
+// let k= 'jeevan'
+// console.log("hello"+ k);
+// console.log("b"+"a"+ +"a"+"a");
+// console.log("10",20+30);
+
+
+
+
+/*38.Who remembers back to their time in the schoolyard, when girls would take a flower and tear its petals, saying each of the following phrases each time a petal was torn:
+"I love you"
+"a little"
+"a lot"
+"passionately"
+"madly"
+"not at all"
+If there are more than 6 petals, you start over with "I love you" for 7 petals, "a little" for 8 petals and so on.
+When the last petal was torn there were cries of excitement, dreams, surging thoughts and emotions.
+Your goal in this kata is to determine which phrase the girls would say at the last petal for a flower of a given number of petals. The number of petals is always greater than 0.
+ARRAYS
+*/
+
+
+function howMuchILoveYou(nbPetals) {
+  let n = nbPetals > 6?  (nbPetals - 6 )%6 : nbPetals
+  return n == 1 ? "I love you": n==2 ? "a little": n==3 ? "a lot": n==4 ? 
+    "passionately":  n==5 ? "madly": "not at all";
+  }
+
+console.log(howMuchILoveYou(18));  
+
