@@ -577,11 +577,35 @@ Example(Input --> Output)
 */
 
 
-function findNeedle(haystack) {
-let k= haystack.indexOf('needle')
-return "found the needle at position "+k
+// function findNeedle(haystack) {
+// let k= haystack.indexOf('needle')
+// return "found the needle at position "+k
  
- 
+// }
+
+// console.log(findNeedle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"]));
+
+
+
+/*40.When provided with a number between 0-9, return it in words.
+Input :: 1
+Output :: "One".
+If your language supports it, try using a switch statement.
+*/
+
+function switchItUp(number){
+  let n=number;
+  return n===1?'One':n===2?'Two': n===3?'Three':n===4?'Four': n===5?'Five':n===6?'Six':n===7?'Seven':n===8?'Eight':n===0?'Zero':'Nine'
 }
 
-console.log(findNeedle(["hay", "junk", "hay", "hay", "moreJunk", "needle", "randomJunk"]));
+console.log(switchItUp(3));
+
+
+
+function printer(x) {
+  let array=['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine']
+  return array[x]
+   
+}
+
+console.log(printer(0));
