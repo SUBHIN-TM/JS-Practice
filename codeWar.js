@@ -593,19 +593,51 @@ Output :: "One".
 If your language supports it, try using a switch statement.
 */
 
-function switchItUp(number){
-  let n=number;
-  return n===1?'One':n===2?'Two': n===3?'Three':n===4?'Four': n===5?'Five':n===6?'Six':n===7?'Seven':n===8?'Eight':n===0?'Zero':'Nine'
-}
+// function switchItUp(number){
+//   let n=number;
+//   return n===1?'One':n===2?'Two': n===3?'Three':n===4?'Four': n===5?'Five':n===6?'Six':n===7?'Seven':n===8?'Eight':n===0?'Zero':'Nine'
+// }
 
-console.log(switchItUp(3));
+// console.log(switchItUp(3));
 
 
 
-function printer(x) {
-  let array=['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine']
-  return array[x]
+// function printer(x) {
+//   let array=['Zero','One','Two','Three','Four','Five','Six','Seven','Eight','Nine']
+//   return array[x]
    
-}
+// }
 
-console.log(printer(0));
+// console.log(printer(0));
+
+
+/*41.Create a function that accepts a string and a single character, and returns an integer of the count of occurrences the 2nd argument is found in the first one.
+If no occurrences can be found, a count of 0 should be returned.
+("Hello", "o")  ==>  1
+("Hello", "l")  ==>  2
+("", "z")       ==>  0
+*/
+
+
+function strCount(str,letter){  
+  let k=str.split("")
+  let value =[]
+  k.map((data,index) => {
+    if(data===letter){
+     value.push(index)
+
+    }else
+    value === null
+  })
+  return value.length
+}
+console.log(strCount('helllo','l'));
+
+
+
+//METHORD2
+console.log(strCount('helllo','l'));
+
+function strCount(str, letter){  
+  return str.split(letter)
+}
