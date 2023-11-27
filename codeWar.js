@@ -617,27 +617,46 @@ If no occurrences can be found, a count of 0 should be returned.
 ("Hello", "l")  ==>  2
 ("", "z")       ==>  0
 */
+// function strCount(str,letter){  
+//   let k=str.split("")
+//   let value =[]
+//   k.map((data,index) => {
+//     if(data===letter){
+//      value.push(index)
+
+//     }else
+//     value === null
+//   })
+//   return value.length
+// }
+// console.log(strCount('helllo','l'));
 
 
-function strCount(str,letter){  
-  let k=str.split("")
-  let value =[]
-  k.map((data,index) => {
-    if(data===letter){
-     value.push(index)
 
-    }else
-    value === null
-  })
-  return value.length
+// //METHORD2
+// console.log(strCount('helllo','l'));
+
+// function strCount(str, letter){  
+//   return str.split(letter)
+// }
+
+
+/*42
+Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+Examples input/output:`
+XO("ooxx") => true
+XO("xooxx") => false
+XO("ooxXm") => true
+XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+XO("zzoo") => false
+*/
+
+function XO(str) {
+ let u= str.toUpperCase()
+  let sp= u.split("")
+ return  sp.filter((data) => data=== 'X').length === sp.filter((data) => data=== 'O').length
+
 }
-console.log(strCount('helllo','l'));
+console.log(XO("ooxx"));
 
 
-
-//METHORD2
-console.log(strCount('helllo','l'));
-
-function strCount(str, letter){  
-  return str.split(letter)
-}
