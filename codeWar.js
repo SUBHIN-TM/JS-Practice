@@ -651,12 +651,41 @@ XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
 XO("zzoo") => false
 */
 
-function XO(str) {
- let u= str.toUpperCase()
-  let sp= u.split("")
- return  sp.filter((data) => data=== 'X').length === sp.filter((data) => data=== 'O').length
+// function XO(str) {
+//  let u= str.toUpperCase()
+//   let sp= u.split("")
+//  return  sp.filter((data) => data=== 'X').length === sp.filter((data) => data=== 'O').length
 
+// }
+// console.log(XO("ooxx"));
+
+
+/* 43 Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence, which is the number of times you must multiply the digits in num until you reach a single digit.
+For example (Input --> Output):
+39 --> 3 (because 3*9 = 27, 2*7 = 14, 1*4 = 4 and 4 has only one digit)
+999 --> 4 (because 9*9*9 = 729, 7*2*9 = 126, 1*2*6 = 12, and finally 1*2 = 2)
+4 --> 0 (because 4 is already a one-digit number)
+*/
+// function persistence(num) {
+//  const cv= num.toString().split("").map(Number)
+//  while( cv.length > 1){
+//   return cv.reduce((total,data) => total *data ,1)
+// }
+//  }
+ 
+
+// console.log(persistence(999));
+
+
+function persistence(num) {
+  let count = 0;
+
+  while (num.toString().length > 1) {
+      num = num.toString().split("").map(Number).reduce((total, digit) => total * digit, 1);
+      count++;
+  }
+
+  return count;
 }
-console.log(XO("ooxx"));
 
-
+console.log(persistence(999)); // This will output 4 as expected
