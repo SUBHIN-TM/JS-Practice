@@ -677,15 +677,32 @@ For example (Input --> Output):
 // console.log(persistence(999));
 
 
-function persistence(num) {
-  let count = 0;
+// function persistence(num) {
+//   let count = 0;
 
-  while (num.toString().length > 1) {
-      num = num.toString().split("").map(Number).reduce((total, digit) => total * digit, 1);
-      count++;
-  }
+//   while (num.toString().length > 1) {
+//       num = num.toString().split("").map(Number).reduce((total, digit) => total * digit, 1);
+//       count++;
+//   }
 
-  return count;
+//   return count;
+// }
+
+// console.log(persistence(999)); // This will output 4 as expected
+
+
+
+
+
+/*44
+You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+Complete the method which accepts such an array, and returns that single different number.
+The input array will always be valid! (odd-length >= 3)
+*/
+
+function stray(numbers) {
+ return numbers.findIndex((data) => numbers.indexOf(data) === numbers.lastIndexOf(data))
+  
 }
 
-console.log(persistence(999)); // This will output 4 as expected
+console.log(stray([1, 1, 2]));
