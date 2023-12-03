@@ -719,15 +719,27 @@ Examples: (Input --> Output)
 ["a", "b", "c"] --> ["1: a", "2: b", "3: c"]
 */
 
+// var number=function(array){
+//   if(!array){
+//     return[]
+//   }
+//   for(i=0;i<array.length;i++){
+//     array[i]=`${i+1}: ${array[i]} `
+//   }
+//   return array
+
+// }
+
+// console.log(number(['A','B','C']));
+
+// METHOD 2
 var number=function(array){
   if(!array){
-    return[]
+    return []
   }
-  for(i=0;i<array.length;i++){
-    array[i]=`${i+1}: ${array[i]} `
-  }
-  return array
+return array.map((data,index) => data=`${index+1}: ${data}`)
 
 }
 
-console.log(number());
+console.log(number(['A','B','C']));
+
