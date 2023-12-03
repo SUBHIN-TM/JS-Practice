@@ -700,9 +700,34 @@ Complete the method which accepts such an array, and returns that single differe
 The input array will always be valid! (odd-length >= 3)
 */
 
-function stray(numbers) {
- return numbers.findIndex((data) => numbers.indexOf(data) === numbers.lastIndexOf(data))
+// function stray(numbers) {
+//     return numbers.findIndex((data) => numbers.firstIndexOf(data) === numbers.lastIndexOf(data))
+// // return numbers.map((data) => data*2)
   
+// }
+
+// console.log(stray([1, 1, 2,2,2,4,1,7,4]));
+
+
+
+
+/*45.Your team is writing a fancy new text editor and you've been tasked with implementing the line numbering.
+Write a function which takes a list of strings and returns each line prepended by the correct number.
+The numbering starts at 1. The format is n: string. Notice the colon and space in between.
+Examples: (Input --> Output)
+[] --> []
+["a", "b", "c"] --> ["1: a", "2: b", "3: c"]
+*/
+
+var number=function(array){
+  if(!array){
+    return[]
+  }
+  for(i=0;i<array.length;i++){
+    array[i]=`${i+1}: ${array[i]} `
+  }
+  return array
+
 }
 
-console.log(stray([1, 1, 2]));
+console.log(number());
