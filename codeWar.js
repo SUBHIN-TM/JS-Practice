@@ -750,9 +750,22 @@ You will need a rental car in order for you to get around in your vacation. The 
 Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
 Write a code that gives out the total amount for different days
 */
-function rentalCarCost(d) {
- let total=d*40
- return d >= 7 ?total-50 : d>=3 ?total-20 :total
+// function rentalCarCost(d) {
+//  let total=d*40
+//  return d >= 7 ?total-50 : d>=3 ?total-20 :total
+// }
+
+// console.log(rentalCarCost(6));
+
+
+/*47.Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
+Example:
+["Keep", "Remove", "Keep", "Remove", "Keep", ...] --> ["Keep", "Keep", "Keep", ...]
+None of the arrays will be empty, so you don't have to worry about that!
+*/
+
+function removeEveryOther(arr){
+  return arr.filter((data,index) =>index%2==0)
 }
 
-console.log(rentalCarCost(6));
+console.log(removeEveryOther([1,2,3,4,5]));
