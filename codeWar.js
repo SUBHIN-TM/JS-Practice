@@ -764,8 +764,41 @@ Example:
 None of the arrays will be empty, so you don't have to worry about that!
 */
 
-function removeEveryOther(arr){
-  return arr.filter((data,index) =>index%2==0)
-}
+// function removeEveryOther(arr){
+//   return arr.filter((data,index) =>index%2==0)
+// }
 
-console.log(removeEveryOther([1,2,3,4,5]));
+// console.log(removeEveryOther([1,2,3,4,5]));
+
+
+
+/*48.Ben has a very simple idea to make some profit: he buys something and sells it again. Of course, this wouldn't give him any profit at all if he was simply to buy and sell it at the same price. Instead, he's going to buy it for the lowest possible price and sell it at the highest.
+Write a function that returns both the minimum and maximum number of the given list/array.
+Examples (Input --> Output)
+[1,2,3,4,5] --> [1,5]
+[2334454,5] --> [5,2334454]
+[1]         --> [1,1]
+*/
+// function minMax(arr){
+//   let low=arr.sort((a,b) => a-b).map((data,index)=> arr[0])
+//   return low
+//   // return [0,0]; // fix me!
+// }
+
+// console.log(minMax([1,2,3,4]));
+
+
+
+/*49.Factors are numbers you can multiply together to get another number.
+2 and 3 are factors of 6 because: 2 * 3 = 6
+You can find a factor by dividing numbers. If the remainder is 0 then the number is a factor.
+You can use the mod operator (%) in most languages to check for a remainder
+For example 2 is not a factor of 7 because: 7 % 2 = 1
+Note: base is a non-negative number, factor is a positive number.
+*/
+
+
+function checkForFactor (base, factor) {
+ return base%factor===0?true:false
+}
+console.log(checkForFactor(10,3));
