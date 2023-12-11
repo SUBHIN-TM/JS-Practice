@@ -709,22 +709,36 @@ Examples (a, b) --> output (explanation)
 Your function should only return a number, not the explanation about how you get that number.
 FUNDAMENTALS*/
 
-function getSum(a, b) {
-  if (a < b || b < a) {
-    var sum = 0;
-    if (a < b) {
-      for (let i = a; i <= b; i++) {
-        sum += i;
-      }
-    } else {
-      for (let i = b; i <= a; i++) {
-        sum += i;
-      }
-    }
-    return sum;
-  }
-  if (a == b) {
-    return a;
-  }
+// function getSum(a, b) {
+//   if (a < b || b < a) {
+//     var sum = 0;
+//     if (a < b) {
+//       for (let i = a; i <= b; i++) {
+//         sum += i;
+//       }
+//     } else {
+//       for (let i = b; i <= a; i++) {
+//         sum += i;
+//       }
+//     }
+//     return sum;
+//   }
+//   if (a == b) {
+//     return a;
+//   }
+// }
+// console.log(getSum(-1, 0));
+
+
+
+/*51.Complete the solution so that it reverses the string passed into it.
+'world'  =>  'dlrow'
+'word'   =>  'drow'
+*/
+
+function solution(str){
+return  str.split("").reverse().join("")
+  
 }
-console.log(getSum(-1, 0));
+
+console.log(solution("hello"));
