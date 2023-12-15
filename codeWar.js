@@ -750,14 +750,28 @@ Example
 For input [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15], you should return [10, -65].
 */
 
-function countPositivesSumNegatives(input) {
-  if(input ===null || input.length==0){
-    return []
-  }else{
-    let positve= input.filter((data) => data > 0 ).length
-    let negative=input.filter((data) => data <0  ).reduce((total,data) => total+data ,0)
-    return [positve,negative]
-  }
-  }
+// function countPositivesSumNegatives(input) {
+//   if(input ===null || input.length==0){
+//     return []
+//   }else{
+//     let positve= input.filter((data) => data > 0 ).length
+//     let negative=input.filter((data) => data <0  ).reduce((total,data) => total+data ,0)
+//     return [positve,negative]
+//   }
+//   }
 
-console.log(countPositivesSumNegatives([]));
+// console.log(countPositivesSumNegatives([]));
+
+
+
+/*53.In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+Example
+filter_list([1,2,'a','b']) == [1,2]
+filter_list([1,'a','b',0,15]) == [1,0,15]
+filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
+*/
+function filter_list(l) {
+  return l.filter((data) => typeof(data)=== 'number' && data >= 0)
+}
+
+console.log(filter_list([1,2,"aasf","1","123",123]));
