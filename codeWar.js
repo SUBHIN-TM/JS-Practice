@@ -770,11 +770,11 @@ filter_list([1,2,'a','b']) == [1,2]
 filter_list([1,'a','b',0,15]) == [1,0,15]
 filter_list([1,2,'aasf','1','123',123]) == [1,2,123]
 */
-function filter_list(l) {
-  return l.filter((data) => typeof(data)=== 'number' && data >= 0)
-}
+// function filter_list(l) {
+//   return l.filter((data) => typeof(data)=== 'number' && data >= 0)
+// }
 
-console.log(filter_list([1,2,"aasf","1","123",123]));
+// console.log(filter_list([1,2,"aasf","1","123",123]));
 
 
 
@@ -786,11 +786,11 @@ n >= 10	90
 You can use if..else or ternary operator to complete it.
 When you have finished the work, click "Run Tests */
 
-function saleHotdogs(n){
-  return n<5 ? n*100 : n>=5 && n<10 ? n*95 :n*90
-}
+// function saleHotdogs(n){
+//   return n<5 ? n*100 : n>=5 && n<10 ? n*95 :n*90
+// }
 
-console.log(saleHotdogs(4))
+// console.log(saleHotdogs(4))
 
 
 /*55 Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings, ordered from shortest to longest.
@@ -799,8 +799,39 @@ For example, if this array were passed as an argument:
 Your function would return the following array:
 ["Eyes", "Glasses", "Monocles", "Telescopes"]
 All of the strings in the array passed to your function will be different lengths, so you will not have to decide how to order multiple strings of the same length.*/
-function sortByLength (array) {
-return array.sort((x,y) => x.length - y.length)
+// function sortByLength (array) {
+// return array.sort((x,y) => x.length - y.length)
     
+// }
+// console.log(sortByLength(["Beg", "Life", "I", "To"]));
+
+
+/*56
+The first century spans from the year 1 up to and including the year 100, the second century - from the year 101 up to and including the year 200, etc.
+Task
+Given a year, return the century it is in.
+Examples
+1705 --> 18
+1900 --> 19
+1601 --> 17
+2000 --> 20
+*/
+
+// function century(years) {
+//  let year=years.toString()
+//   return year<=100 ?1: year.slice(2)==='00'? parseInt(year.slice(0,2)):parseInt(year.slice(0,2))+1
+  
+// }
+// console.log(century(916678));
+
+
+/*57.Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+Examples
+"This is an example!" ==> "sihT si na !elpmaxe"
+"double  spaces"      ==> "elbuod  secaps" */
+
+function reverseWords(str) {
+  return str.split(" ").map((data) => data.split("").reverse().join("")).join(" ")
 }
-console.log(sortByLength(["Beg", "Life", "I", "To"]));
+// console.log(reverseWords('This is an example!'));
+console.log(reverseWords('double  spaces'));
