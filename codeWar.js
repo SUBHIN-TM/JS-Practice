@@ -830,8 +830,19 @@ Examples
 "This is an example!" ==> "sihT si na !elpmaxe"
 "double  spaces"      ==> "elbuod  secaps" */
 
-function reverseWords(str) {
-  return str.split(" ").map((data) => data.split("").reverse().join("")).join(" ")
-}
-// console.log(reverseWords('This is an example!'));
-console.log(reverseWords('double  spaces'));
+// function reverseWords(str) {
+//   return str.split(" ").map((data) => data.split("").reverse().join("")).join(" ")
+// }
+// // console.log(reverseWords('This is an example!'));
+// console.log(reverseWords('double  spaces'));
+
+
+/*58.Write a function that takes an array of words and smashes them together into a sentence and returns the sentence. You can ignore any need to sanitize words or add punctuation, but you should add spaces between each word. Be careful, there shouldn't be a space at the beginning or the end of the sentence!
+Example
+['hello', 'world', 'this', 'is', 'great']  =>  'hello world this is great'
+ */
+function smash (words) {
+ return words.join(" ")
+};
+
+console.log(smash(['hello', 'world', 'this', 'is', 'great']));
