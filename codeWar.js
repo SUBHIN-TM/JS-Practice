@@ -867,8 +867,20 @@ b = 4
 
 /*60.Now you have to write a function that takes an argument and returns the square of it.
 */
-function square(a) {
-  return Math.pow(a,2)
+// function square(a) {
+//   return Math.pow(a,2)
   
+// }
+// console.log(square(3));
+
+
+/*61Return the number (count) of vowels in the given string.
+We will consider a, e, i, o, u as vowels for this Kata (but not y).
+The input string will only consist of lower case letters and/or spaces.
+*/
+function getCount(str) {
+  let vowels=['a','e','i','o','u']
+  return str.split("").filter((data) => vowels.includes(data)).length
 }
-console.log(square(3));
+
+console.log(getCount('abracadabra'));
