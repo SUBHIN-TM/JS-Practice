@@ -853,12 +853,22 @@ For example:
 a = 1
 b = 4
 --> [1, 2, 3, 4] */
-function between(a, b) {
-  let result=[]
- for(let i=a;i<=b;i++){
-  result.push(i)
- }
- return result
-}
+// function between(a, b) {
+//   let result=[]
+//  for(let i=a;i<=b;i++){
+//   result.push(i)
+//  }
+//  return result
+// }
 
-console.log(between(1,4));
+// console.log(between(1,4));
+
+
+
+/*60.Now you have to write a function that takes an argument and returns the square of it.
+*/
+function square(a) {
+  return Math.pow(a,2)
+  
+}
+console.log(square(3));
