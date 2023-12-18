@@ -878,9 +878,21 @@ b = 4
 We will consider a, e, i, o, u as vowels for this Kata (but not y).
 The input string will only consist of lower case letters and/or spaces.
 */
-function getCount(str) {
-  let vowels=['a','e','i','o','u']
-  return str.split("").filter((data) => vowels.includes(data)).length
+// function getCount(str) {
+//   let vowels=['a','e','i','o','u']
+//   return str.split("").filter((data) => vowels.includes(data)).length
+// }
+
+// console.log(getCount('abracadabra'));
+
+
+/*62.You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+Array can contain numbers or strings. X can be either.
+Return true if the array contains the value, false if not.
+(check([66, 101], 66), true);
+*/
+function check(a, x) {
+return a.includes(x)?true:false
 }
 
-console.log(getCount('abracadabra'));
+console.log(check('what', 'a', 'great', 'kata','kat'));
