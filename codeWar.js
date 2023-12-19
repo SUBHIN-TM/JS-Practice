@@ -964,10 +964,24 @@ You receive an array with your peers' test scores. Now calculate the average and
 Return True if you're better, else False!
 Note:
 Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array! */
-function betterThanAverage(classPoints, yourPoints) {
-let av =classPoints.reduce((total,data) => total + data ,0)/classPoints.length
-return av < yourPoints
+// function betterThanAverage(classPoints, yourPoints) {
+// let av =classPoints.reduce((total,data) => total + data ,0)/classPoints.length
+// return av < yourPoints
+// }
+
+// console.log(betterThanAverage([2, 3],5));
+
+
+/*67.Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
+(In this case, all triangles must have surface greater than 0 to be accepted). */
+function isTriangle(a,b,c)
+{
+ if(a>0 && b>0 && c>0){
+  if(a+b >c && a+c >b && b+c>a){
+    return true
+  } 
+ }
+ return false
 }
 
-console.log(betterThanAverage([2, 3],5));
-
+console.log(isTriangle(7,2,2));
