@@ -974,14 +974,31 @@ Your points are not included in the array of your class's points. For calculatin
 
 /*67.Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
 (In this case, all triangles must have surface greater than 0 to be accepted). */
-function isTriangle(a,b,c)
+// function isTriangle(a,b,c)
+// {
+//  if(a>0 && b>0 && c>0){
+//   if(a+b >c && a+c >b && b+c>a){
+//     return true
+//   } 
+//  }
+//  return false
+// }
+
+// console.log(isTriangle(7,2,2));
+
+/*.68.Your task is to create a function that does four basic mathematical operations.
+The function should take three arguments - operation(string/char), value1(number), value2(number).
+The function should return result of numbers after applying the chosen operation.
+Examples(Operator, value1, value2) --> output
+('+', 4, 7) --> 11
+('-', 15, 18) --> -3
+('*', 5, 5) --> 25
+('/', 49, 7) --> 7 */
+
+function basicOp(operation, value1, value2)
 {
- if(a>0 && b>0 && c>0){
-  if(a+b >c && a+c >b && b+c>a){
-    return true
-  } 
- }
- return false
+let select = {'+' : (value1,value2) => value1 + value2 ,'-' : (value1,value2) => value1 - value2 ,'*' :(value1,value2) => value1 * value2 ,'/' : (value1,value2) => value1 / value2 }
+return select[operation](value1,value2)
 }
 
-console.log(isTriangle(7,2,2));
+console.log(basicOp( '-' , 8, 7));
