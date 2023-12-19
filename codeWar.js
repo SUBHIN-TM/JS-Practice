@@ -891,8 +891,83 @@ Array can contain numbers or strings. X can be either.
 Return true if the array contains the value, false if not.
 (check([66, 101], 66), true);
 */
-function check(a, x) {
-return a.includes(x)?true:false
+// function check(a, x) {
+// return a.includes(x)?true:false
+// }
+
+// console.log(check('what', 'a', 'great', 'kata','kat'));
+
+/*63.Bob needs a fast way to calculate the volume of a cuboid with three values: the length, width and height of the cuboid. Write a function to help Bob with this calculation.
+*/
+
+//   function getVolumeOfCuboid(length, width, height) {
+//     return length*width*height
+//   }
+// console.log(
+//   getVolumeOfCuboid(1,2,3));
+  
+
+/*64Given two numbers and an arithmetic operator (the name of it, as a string), return the result of the two numbers having that operator used on them.
+a and b will both be positive integers, and a will always be the first number in the operation, and b always the second.
+The four operators are "add", "subtract", "divide", "multiply".
+A few examples:(Input1, Input2, Input3 --> Output)
+
+5, 2, "add"      --> 7
+5, 2, "subtract" --> 3
+5, 2, "multiply" --> 10
+5, 2, "divide"   --> 2.5 */
+// function arithmetic(a, b, operator){
+//   return operator == 'add' ? a+b :operator =='subtract' ?a-b :operator == 'multiply' ?a*b:a/b
+// }
+
+// console.log(arithmetic(8,2,'subtract'));
+
+//  function arithmetic(a, b, operator){
+//   const find ={'add': (a,b) => a+b ,'subtract': (a,b) => a-b,'multiply': (a,b) => a*b,'divide': (a,b) => a/b}
+//   return find[operator](a,b)
+//  }
+//  console.log(arithmetic(8,2,'subtract'));
+
+
+
+
+/*65.Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+Example
+"abcde" -> 0 # no characters repeats more than once
+"aabbcde" -> 2 # 'a' and 'b'
+"aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+"indivisibility" -> 1 # 'i' occurs six times
+"Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+"aA11" -> 2 # 'a' and '1'
+"ABBA" -> 2 # 'A' and 'B' each occur twice
+*/
+
+// function duplicateCount(text) {
+//   let main = text.toUpperCase();
+//   let array = main.split("");
+
+//   // Use filter and indexOf to count duplicates
+//   let duplicates = array.filter((value, index, self) => {
+//     return self.indexOf(value) !== index;
+//   });
+
+//   // Return the count of unique duplicates
+//   return new Set(duplicates).size;
+// }
+
+// console.log(duplicateCount('aA11'));
+
+
+/*66.There was a test in your class and you passed it. Congratulations!
+But you're an ambitious person. You want to know if you're better than the average student in your class.
+You receive an array with your peers' test scores. Now calculate the average and compare your score!
+Return True if you're better, else False!
+Note:
+Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array! */
+function betterThanAverage(classPoints, yourPoints) {
+let av =classPoints.reduce((total,data) => total + data ,0)/classPoints.length
+return av < yourPoints
 }
 
-console.log(check('what', 'a', 'great', 'kata','kat'));
+console.log(betterThanAverage([2, 3],5));
+
