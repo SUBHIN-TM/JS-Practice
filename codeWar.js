@@ -1024,23 +1024,38 @@ Take a look on the test cases
 Please keep in mind that the test cases ensure that the number of people in the bus is always >= 0. So the returned integer can't be negative.
 The second value in the first pair in the array is 0, since the bus is empty in the first bus stop.
 */
-var number = function(busStops){
-  return busStops.reduce((total,[getOn,GetOff]) => total + (getOn-GetOff),0)
+// var number = function(busStops){
+//   return busStops.reduce((total,[getOn,GetOff]) => total + (getOn-GetOff),0)
+// }
+
+// console.log(number([[10,0],[3,5],[5,8]]));
+
+
+
+// /*71.papper scssor*/
+// const rps = (p1, p2) => {
+//   if(p1==p2){
+//     return "Draw!";
+//   }else if(p1=='scissors' && p2=="paper" || p1=="paper" && p2=='rock' || p1=='rock' && p2=="scissors"){
+//     return "Player 1 won!";
+//   }else{
+//   return "Player 2 won!";
+// }
+// }
+
+// console.log(rps('scissors', 'rock'));
+
+
+
+/*72.You are given two interior angles (in degrees) of a triangle.
+
+Write a function to return the 3rd.
+Note: only positive integers will be tested.
+https://en.wikipedia.org/wiki/Triangle
+*/
+
+function otherAngle(a, b) {
+  return 180-(a+b)
 }
 
-console.log(number([[10,0],[3,5],[5,8]]));
-
-
-
-/*71.papper scssor*/
-const rps = (p1, p2) => {
-  if(p1==p2){
-    return "Draw!";
-  }else if(p1=='scissors' && p2=="paper" || p1=="paper" && p2=='rock' || p1=='rock' && p2=="scissors"){
-    return "Player 1 won!";
-  }else{
-  return "Player 2 won!";
-}
-}
-
-console.log(rps('scissors', 'rock'));
+console.log(otherAngle(30,60));
