@@ -1071,15 +1071,28 @@ Examples:(Input --> Output)
 114 --> -1 since 114 is not a perfect square
 */
 
-function findNextSquare(sq) {
- let number= Math.sqrt(sq)
- if(Number.isInteger(number)){ //integer contains both negative and positive number and zero also but not contain decimal values
-  return Math.pow(number+1,2)
- }else{
-  return -1
- }
+// function findNextSquare(sq) {
+//  let number= Math.sqrt(sq)
+//  if(Number.isInteger(number)){ //integer contains both negative and positive number and zero also but not contain decimal values
+//   return Math.pow(number+1,2)
+//  }else{
+//   return -1
+//  }
+// }
+
+// console.log(findNextSquare(114));
+
+
+/*74.Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
+For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter; and month 11 (November), is part of the fourth quarter.
+*/
+// const quarterOf = (month) => {
+//   return (month<=3) ? 1:(month<=6)?2:(month<=9) ?3:4
+// }
+// console.log(quarterOf(9));
+
+//OR
+const quarterOf = (month) => {
+  return Math.ceil(month/3) //CEIL ALWAYS ROUND TO AFTER THE POINT 1.22 =2
 }
-
-console.log(findNextSquare(114));
-
-
+console.log(quarterOf(12));
