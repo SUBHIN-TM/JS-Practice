@@ -1092,10 +1092,10 @@ For example: month 2 (February), is part of the first quarter; month 6 (June), i
 // console.log(quarterOf(9));
 
 //OR
-const quarterOf = (month) => {
-  return Math.ceil(month/3) //CEIL ALWAYS ROUND TO AFTER THE POINT 1.22 =2
-}
-console.log(quarterOf(12));
+// const quarterOf = (month) => {
+//   return Math.ceil(month/3) //CEIL ALWAYS ROUND TO AFTER THE POINT 1.22 =2
+// }
+// console.log(quarterOf(12));
 
 
 /*75.Given an integer as input, can you round it to the next (meaning, "greater than or equal") multiple of 5?
@@ -1110,13 +1110,51 @@ input:    output:
 -2   ->   0
 -5   ->   -5
 etc.*/
-function roundToNextMultipleOf5(number) {
-  if (number % 5 === 0) {
-      return number;
-  } else {
-      // Calculate the next multiple of 5
-      return Math.ceil(number / 5) * 5; //MATH CEIL ONLY FOR THE BRACKET
+// function roundToNextMultipleOf5(number) {
+//   if (number % 5 === 0) {
+//       return number;
+//   } else {
+//       // Calculate the next multiple of 5
+//       return Math.ceil(number / 5) * 5; //MATH CEIL ONLY FOR THE BRACKET
+//   }
+// }
+
+// console.log(roundToNextMultipleOf5(7));
+
+/*.76.The museum of incredible dull things wants to get rid of some exhibitions. Miriam, the interior architect, comes up with a plan to remove the most boring exhibitions. She gives them a rating, and then removes the one with the lowest rating.
+However, just as she finished rating all exhibitions, she's off to an important fair, so she asks you to write a program that tells her the ratings of the items after one removed the lowest one. Fair enough.
+Ta
+Given an array of integers, remove the smallest value. Do not mutate the original array/list. If there are multiple elements with the same value, remove the one with a lower index. If you get an empty array/list, return an empty array/list.
+Don't change the order of the elements that are left.
+* Input: [1,2,3,4,5], output = [2,3,4,5]
+* Input: [5,3,2,1,4], output = [5,3,2,4]
+* Input: [2,2,1,2,1], output = [2,2,2,1]
+*/
+
+function removeSmallest(numbers) {
+  if(numbers==null){
+    return []
   }
+  let list =[...numbers]
+  let small =list[0]
+  for(let i=0;i<list.length;i++){
+    if(small>=list[i]){
+      small =list[i]
+    }     
+  }
+   list.splice(list.indexOf(small),1) 
+   return list
 }
 
-console.log(roundToNextMultipleOf5(7));
+console.log(removeSmallest([5,3,2,1,4]))
+
+//or
+function removeSmallest(numbers) {
+let indexOfMin =numbers.indexOf(Math.min(...numbers)) //need to get seperate valuse to calculate so it use spread 
+numbers.splice(indexOfMin,1)
+return numbers
+}
+console.log(removeSmallest([5,3,2,1,4]))
+
+
+
