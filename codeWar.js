@@ -1131,30 +1131,92 @@ Don't change the order of the elements that are left.
 * Input: [2,2,1,2,1], output = [2,2,2,1]
 */
 
-function removeSmallest(numbers) {
-  if(numbers==null){
-    return []
-  }
-  let list =[...numbers]
-  let small =list[0]
-  for(let i=0;i<list.length;i++){
-    if(small>=list[i]){
-      small =list[i]
-    }     
-  }
-   list.splice(list.indexOf(small),1) 
-   return list
-}
+// function removeSmallest(numbers) {
+//   if(numbers==null){
+//     return []
+//   }
+//   let list =[...numbers]
+//   let small =list[0]
+//   for(let i=0;i<list.length;i++){
+//     if(small>=list[i]){
+//       small =list[i]
+//     }     
+//   }
+//    list.splice(list.indexOf(small),1) 
+//    return list
+// }
 
-console.log(removeSmallest([5,3,2,1,4]))
+// console.log(removeSmallest([5,3,2,1,4]))
 
-//or
-function removeSmallest(numbers) {
-let indexOfMin =numbers.indexOf(Math.min(...numbers)) //need to get seperate valuse to calculate so it use spread 
-numbers.splice(indexOfMin,1)
-return numbers
-}
-console.log(removeSmallest([5,3,2,1,4]))
+// //or
+// function removeSmallest(numbers) {
+// let indexOfMin =numbers.indexOf(Math.min(...numbers)) //need to get seperate valuse to calculate so it use spread 
+// numbers.splice(indexOfMin,1)
+// return numbers
+// }
+// console.log(removeSmallest([5,3,2,1,4]))
+
+
+//NOTES
+// let array=[5,2,3]
+// let min = Math.min(...array)
+// console.log(min);
+
+
+/*77.encrypt("012345", 1)  =>  "135024"
+encrypt("012345", 2)  =>  "135024"  ->  "304152"
+encrypt("012345", 3)  =>  "135024"  ->  "304152"  ->  "012345"
+encrypt("01234", 1)  =>  "13024"
+encrypt("01234", 2)  =>  "13024"  ->  "32104"
+encrypt("01234", 3)  =>  "13024"  ->  "32104"  ->  "20314"
+*/
+
+// function encrypt(text, n) {
+// let array= text.split("")
+// for(let i=1;i<=n ;i++){
+//   let odd =array.filter((data,index) => index%2 !==0)
+//   let even =array.filter((data,index) => index%2 ==0 )
+//   array=odd.concat(even)
+//   }
+//   return array.join("")
+// }
 
 
 
+
+// console.log(encrypt("012345",2));
+
+
+/*78current father's age (years)
+current age of his son (years)
+Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old). The answer is always greater or equal to 0, no matter if it was in the past or it is in the future.
+
+*/
+
+// function twiceAsOld(dadYearsOld, sonYearsOld) {
+
+//  let result= dadYearsOld-sonYearsOld*2
+//  if(result<0){
+//   return 0-result
+//  }
+//  return result
+// }
+
+// console.log(twiceAsOld(36,7));
+
+
+
+
+//ALWAYS CONVERT TO POSITIVE NUMBERS
+// let k=3
+// console.log(Math.abs(k));
+
+
+
+
+function removeChar(str){
+   let result =str.slice(1,str.length-1)
+return result
+ }
+ 
+ console.log(removeChar('person'));
