@@ -1288,9 +1288,25 @@ Examples (input --> output)
 
 //81.FIND INTEGTRAL PERFECT SQRE OR NOT (SQUARE ROOT)
 
-var isSquare = function(n){
-  let SQUAREROOOT= Math.sqrt(n)
-  return Number.isInteger(SQUAREROOOT)
+// var isSquare = function(n){
+//   let SQUAREROOOT= Math.sqrt(n)
+//   return Number.isInteger(SQUAREROOOT)
+// }
+
+// console.log(isSquare(26));
+
+
+/*82.In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number
+Examples
+highAndLow("1 2 3 4 5");  // return "5 1"
+highAndLow("1 2 -3 4 5"); // return "5 -3"
+*/
+
+function highAndLow(numbers){
+let cnvrtednumber=  numbers.split(" ").map(Number)
+let small = Math.min(...cnvrtednumber).toString()
+let high = Math.max(...cnvrtednumber).toString()
+return `${small},${high}`
 }
 
-console.log(isSquare(26));
+console.log(highAndLow("1 2 3 4 5"));
