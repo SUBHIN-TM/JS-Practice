@@ -1214,9 +1214,83 @@ current age of his son (years)
 
 
 
-function removeChar(str){
-   let result =str.slice(1,str.length-1)
-return result
- }
+// function removeChar(str){
+//    let result =str.slice(1,str.length-1)
+// return result
+//  }
  
- console.log(removeChar('person'));
+//  console.log(removeChar('person'));
+
+
+
+
+/*79.Count the number of divisors of a positive integer n.
+Random tests go up to n = 500000.
+Examples (input --> output)
+4 --> 3 // we have 3 divisors - 1, 2 and 4
+5 --> 2 // we have 2 divisors - 1 and 5
+12 --> 6 // we have 6 divisors - 1, 2, 3, 4, 6 and 12
+30 --> 8 // we have 8 divisors - 1, 2, 3, 5, 6, 10, 15 and 30
+*/
+// function getDivisorsCnt(n){
+//   let count=0;
+//   for(let i=1;i<=n;i++){
+//     if(n%i==0){
+//       count ++
+//     }
+//   }
+//   return count
+// }
+
+// console.log(getDivisorsCnt(5));
+
+
+
+
+
+
+
+/*80.describe("Basic tests", () => {
+6
+  it("Testing for fixed tests", () => {
+7
+    assert.deepEqual(pipeFix([1,2,3,5,6,8,9]),[1,2,3,4,5,6,7,8,9]);
+8
+    assert.deepEqual(pipeFix([1,2,3,12]),[1,2,3,4,5,6,7,8,9,10,11,12]);
+9
+    assert.deepEqual(pipeFix([6,9]),[6,7,8,9]);
+10
+    assert.deepEqual(pipeFix([-1,4]),[-1,0,1,2,3,4]);
+11
+    assert.deepEqual(pipeFix([1,2,3]),[1,2,3]);
+12
+  });
+13
+}); */
+
+// function pipeFix(numbers){
+//  let samll= Math.min(...numbers)
+//  let high =Math.max(...numbers)
+//  let result =[]
+//  for(let i=samll;i<=high;i++){
+//       result.push(i)
+//  }
+//  return result
+//   }
+
+
+
+// console.log(pipeFix([1,2,3,5,6,8,9]));
+
+
+
+
+
+//81.FIND INTEGTRAL PERFECT SQRE OR NOT (SQUARE ROOT)
+
+var isSquare = function(n){
+  let SQUAREROOOT= Math.sqrt(n)
+  return Number.isInteger(SQUAREROOOT)
+}
+
+console.log(isSquare(26));
