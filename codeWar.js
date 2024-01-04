@@ -1341,3 +1341,5 @@ Note: The function accepts an integer and returns an integer. */
 
 console.log(peopleWithAgeDrink(20));
 khjkhsd
+
+nextj
