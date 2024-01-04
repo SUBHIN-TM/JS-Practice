@@ -1317,8 +1317,21 @@ highAndLow("1 2 -3 4 5"); // return "5 -3"
 For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1. (81-1-1-81)
 Example #2: An input of 765 will/should return 493625 because 72 is 49, 62 is 36, and 52 is 25. (49-36-25)
 Note: The function accepts an integer and returns an integer. */
-function squareDigits(num){
- let result= num.toString().split("").map(Number).map(data => data*data).join("")
- return parseInt(result)
+// function squareDigits(num){
+//  let result= num.toString().split("").map(Number).map(data => data*data).join("")
+//  return parseInt(result)
+// }
+// console.log(squareDigits(3212));
+
+
+/*84.arrayDiff([1,2,2,2,3],[2]) == [1,3]*/
+function arrayDiff(a, b) {
+  //     return  a.filter((data) => {
+  //     return  !b.includes(data)
+  // })
+  
+
+  return a.filter((data) => !b.includes(data))
 }
-console.log(squareDigits(3212));
+
+console.log(arrayDiff([1,2,3],[1,2]));
