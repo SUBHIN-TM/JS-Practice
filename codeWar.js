@@ -1338,28 +1338,5 @@ Note: The function accepts an integer and returns an integer. */
 
 
 
-/*85.Children under 14 old.
-Teens under 18 old.
-Young under 21 old.
-Adults have 21 or more.
-Examples: (Input --> Output)
-
-13 --> "drink toddy"
-17 --> "drink coke"
-18 --> "drink beer"
-20 --> "drink beer"
-30 --> "drink whisky"
-*/
-
-function peopleWithAgeDrink(old) {
-let select =   {
-    'children': 'drink toddy',
-    'teens': 'drink coke',
-    'Young' : "drink beer",
-    'adults' : "drink whisky"
-  }
-  return select[old<14?'children':old<18?'teens':old<21?'Young':'adults']
-
-}  
 
 console.log(peopleWithAgeDrink(20));
