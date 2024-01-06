@@ -1350,8 +1350,7 @@ if bmi > 30 return "Obese"
 // }
 // console.log(bmi(80,1.80));
 
-/*This time no story, no theory. The examples below show you how to write function accum:
-
+/*85.This time no story, no theory. The examples below show you how to write function accum:
 Examples:
 accum("abcd") -> "A-Bb-Ccc-Dddd"
 accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
@@ -1375,7 +1374,24 @@ The parameter of accum is a string which includes only letters from a..z and A..
 // console.log(accum('cwAt'));
 
 
-function names(s) {
-  return [...s].map((data,index) => data.toUpperCase() + data.toLowerCase().repeat(index)).join("-")
-}
-console.log(names('cwAt'));
+// function names(s) {
+//   return [...s].map((data,index) => data.toUpperCase() + data.toLowerCase().repeat(index)).join("-")
+// }
+// console.log(names('cwAt'));
+
+
+
+/*.86Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
+Example (Input --> Output)
+"CodEWaRs" --> [0,3,4,6] */
+var capitals = function (word) {
+  let result =[];
+	[...word].filter((data,index) =>  {
+   if( data === data.toUpperCase()){
+    result.push({letter:data,index:index})
+   
+   } })
+   return result.map(data => data.index)
+};
+
+console.log(capitals("CodEWaRs"));
