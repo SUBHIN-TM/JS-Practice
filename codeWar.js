@@ -1343,9 +1343,39 @@ if bmi <= 30.0 return "Overweight"
 if bmi > 30 return "Obese"
 */
 
-function bmi(weight, height) {
-  let bmi = weight/(height*height)
-  return bmi<=18.5 ?"Underweight":bmi<=25.0?"Normal":bmi<=30.0?"Overweight":"Obese"
+// function bmi(weight, height) {
+//   let bmi = weight/(height*height)
+//   return bmi<=18.5 ?"Underweight":bmi<=25.0?"Normal":bmi<=30.0?"Overweight":"Obese"
   
+// }
+// console.log(bmi(80,1.80));
+
+/*This time no story, no theory. The examples below show you how to write function accum:
+
+Examples:
+accum("abcd") -> "A-Bb-Ccc-Dddd"
+accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+accum("cwAt") -> "C-Ww-Aaa-Tttt"
+The parameter of accum is a string which includes only letters from a..z and A..Z.
+
+*/
+
+// function accum(s) {
+//   let result=[]
+// 	let letters = s.toUpperCase()
+//   letters.split("").map((data,index) => {
+//    result.push('-',data)
+//    for(let i =0 ;i<index;i++){
+//    result.push(data.toLowerCase())
+//    }
+//   })
+//   return result.splice(1).join("")
+// }
+
+// console.log(accum('cwAt'));
+
+
+function names(s) {
+  return [...s].map((data,index) => data.toUpperCase() + data.toLowerCase().repeat(index)).join("-")
 }
-console.log(bmi(80,1.80));
+console.log(names('cwAt'));
