@@ -1384,14 +1384,72 @@ The parameter of accum is a string which includes only letters from a..z and A..
 /*.86Write a function that takes a single string (word) as argument. The function must return an ordered list containing the indexes of all capital letters in the string.
 Example (Input --> Output)
 "CodEWaRs" --> [0,3,4,6] */
-var capitals = function (word) {
-  let result =[];
-	[...word].filter((data,index) =>  {
-   if( data === data.toUpperCase()){
-    result.push({letter:data,index:index})
+// var capitals = function (word) {
+//   let result =[];
+// 	[...word].filter((data,index) =>  {
+//    if( data === data.toUpperCase()){
+//     result.push({letter:data,index:index})
    
-   } })
-   return result.map(data => data.index)
-};
+//    } })
+//    return result.map(data => data.index)
+// };
 
-console.log(capitals("CodEWaRs"));
+// console.log(capitals("CodEWaRs"));
+
+
+
+/*87.Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
+*/
+
+// const binaryArrayToNumber = arr => {
+//   const arrString =arr.join('') 
+//   return parseInt(arrString,2)
+ 
+// };
+
+// console.log(binaryArrayToNumber([0, 0, 1, 1]));
+
+
+/*88.In this kata you will create a function that takes in a list and returns a list with the reverse order.
+Examples (Input -> Output)
+* [1, 2, 3, 4]  -> [4, 3, 2, 1]
+* [9, 2, 0, 7]  -> [7, 0, 2, 9]
+*/
+
+// function reverseList(list) {
+// return list.reverse()
+// }
+
+// console.log(reverseList([1, 2, 3, 4]));
+
+
+
+/*89.Ben has a very simple idea to make some profit: he buys something and sells it again. Of course, this wouldn't give him any profit at all if he was simply to buy and sell it at the same price. Instead, he's going to buy it for the lowest possible price and sell it at the highest.
+Task
+Write a function that returns both the minimum and maximum number of the given list/array.
+Examples (Input --> Output)
+[1,2,3,4,5] --> [1,5]
+[2334454,5] --> [5,2334454]
+[1]         --> [1,1]
+*/
+
+// function minMax(arr){
+//   let min = Math.min(...arr)
+//   let max =Math.max(...arr)
+//   return [min,max]
+// }
+
+// console.log(minMax([2334454,5]));
+
+
+/*90."is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+"4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+""  -->  ""
+*/
+
+function order(words){
+ 
+  return words.split(" ")
+}
+
+console.log(order("is2 Thi1s T4est 3a"));
