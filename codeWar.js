@@ -1447,10 +1447,73 @@ Examples (Input --> Output)
 ""  -->  ""
 */
 
-function order(words) {
- return words.split(" ").sort((a,b) => a.match(/\d/) - b.match(/\d/)).join(" ")
+// function order(words) {
+//  return words.split(" ").sort((a,b) => a.match(/\d/) - b.match(/\d/)).join(" ")
    
-}
+// }
 
-console.log(order("is2 Thi1s T4est 3a"));
+// console.log(order("is2 Thi1s T4est 3a"));
+
+
+
+/*91.Let's say you are given the array {1,2,3,4,3,2,1}:
+Your function will return the index 3, because at the 3rd position of the array, the sum of left side of the index ({1,2,3}) and the sum of the right side of the index ({3,2,1}) both equal 6.
+
+Let's look at another one.
+You are given the array {1,100,50,-51,1,1}:
+Your function will return the index 1, because at the 1st position of the array, the sum of left side of the index ({1}) and the sum of the right side of the index ({50,-51,1,1}) both equal 1.
+Last one:
+*/
+// function findEvenIndex(arr)
+// {
+// for(let index=0;index<arr.length;index++){
+//   let left =arr.slice(0,index).reduce((data,sum) => data + sum ,0)
+//   let right =arr.slice(index+1).reduce((data,sum) => data + sum ,0)
+//   if(left ===  right){
+//     return index;
+//   }
+// }
+//   return -1
+
+// }
+
+//  console.log(findEvenIndex([1,2,3,4,3,2,1]));
+
+// let trys=[1,2,3]
+// console.log(trys.splice(1));
+
+/*92 always positive
+
+-34: 34 */
+// function opposite(number) {
+//   return Math.abs(number)
+// }
+
+// console.log(opposite(-1));
+
+
+
+// const validSmileyRegex = /(:|;)(-|~)?(\)|D)/g;
+
+// function countSmileys(text) {
+//   const matches = text.match(validSmileyRegex);
+//   return matches ? matches.length : 0;
+// }
+
+// const textWithSmileys = "Hello :) How are you? :D ;-D :~)";
+// const count = countSmileys(textWithSmileys);
+
+// console.log(`Number of valid smiley faces: ${count}`);
+
+
+function countSmileys(arr) {
+  let regex =/(:|;)(-|~)?(\)|D)/g;
+  if(!arr || arr.length==0 ){
+    return 0
+  }
+  let result =arr.toString().match(regex)
+  return result.length
+}
+// console.log(countSmileys([':D',':~)',';~D',':)']));
+console.log(countSmileys());
 
