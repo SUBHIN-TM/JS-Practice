@@ -1482,8 +1482,9 @@ Last one:
 // let trys=[1,2,3]
 // console.log(trys.splice(1));
 
-/*92 always positive
 
+
+/*92 always positive
 -34: 34 */
 // function opposite(number) {
 //   return Math.abs(number)
@@ -1493,27 +1494,51 @@ Last one:
 
 
 
-// const validSmileyRegex = /(:|;)(-|~)?(\)|D)/g;
 
-// function countSmileys(text) {
-//   const matches = text.match(validSmileyRegex);
-//   return matches ? matches.length : 0;
-// }
-
-// const textWithSmileys = "Hello :) How are you? :D ;-D :~)";
+//93. const textWithSmileys = "Hello :) How are you? :D ;-D :~)";
 // const count = countSmileys(textWithSmileys);
-
 // console.log(`Number of valid smiley faces: ${count}`);
+// function countSmileys(arr) {
+//   let regex =/(:|;)(-|~)?(\)|D)/g;
+//   if(!arr || arr.length==0 ){
+//     return 0
+//   }
+//   let result =arr.toString().match(regex)
+//   return result.length
+// }
+// // console.log(countSmileys([':D',':~)',';~D',':)']));
+// console.log(countSmileys());
 
 
-function countSmileys(arr) {
-  let regex =/(:|;)(-|~)?(\)|D)/g;
-  if(!arr || arr.length==0 ){
-    return 0
+
+//94.quw and que time
+function queueTime(customers, n) {
+  //customers = each customer take checkout time 
+  //n= no of counters are available
+  if (customers.length === 0) {
+      return 0;
+    }
+  const Totalcounters =Array(n).fill(0)
+  //make new array with no of counters available and put inital value 0 for each
+ 
+  for(let time of customers){
+    //each customers represent as time and each customer will  assigned in small index
+    const nextcounter = Totalcounters.indexOf(Math.min(...Totalcounters))
+    Totalcounters[nextcounter] +=time
+    //each coustomer come next loop first it wil go to minimum index 
+    //eg  (queueTime([10, 2, 3, 3], 2));   initially we created Total counters as [0,0]
+    //first loop 10 will go to small index= Total counter =[10,0]
+    //next rounund 2 go to minimum index value data  mewans 0 value index = TotalCounter =[10,2]
+    //next round 3 go to small value index =[10,3]
+    //next round 3 go to small value index =[10,3]
+    //all loop end we can take maximim value in totla counter becz we need the minimum time that to complete
+    //so find maxm valuer and return it
+
+              
   }
-  let result =arr.toString().match(regex)
-  return result.length
+   return Math.max(...Totalcounters)
 }
-// console.log(countSmileys([':D',':~)',';~D',':)']));
-console.log(countSmileys());
 
+console.log(queueTime([5, 3, 4], 1));    // Output: 12
+ console.log(queueTime([10, 2, 3, 3], 2)); // Output: 10
+ console.log(queueTime([2, 3, 10], 2));    // Output: 12
