@@ -1511,34 +1511,86 @@ Last one:
 
 
 
-//94.quw and que time
-function queueTime(customers, n) {
-  //customers = each customer take checkout time 
-  //n= no of counters are available
-  if (customers.length === 0) {
-      return 0;
-    }
-  const Totalcounters =Array(n).fill(0)
-  //make new array with no of counters available and put inital value 0 for each
+// //94.quw and que time
+// function queueTime(customers, n) {
+//   //customers = each customer take checkout time 
+//   //n= no of counters are available
+//   if (customers.length === 0) {
+//       return 0;
+//     }
+//   const Totalcounters =Array(n).fill(0)
+//   //make new array with no of counters available and put inital value 0 for each
  
-  for(let time of customers){
-    //each customers represent as time and each customer will  assigned in small index
-    const nextcounter = Totalcounters.indexOf(Math.min(...Totalcounters))
-    Totalcounters[nextcounter] +=time
-    //each coustomer come next loop first it wil go to minimum index 
-    //eg  (queueTime([10, 2, 3, 3], 2));   initially we created Total counters as [0,0]
-    //first loop 10 will go to small index= Total counter =[10,0]
-    //next rounund 2 go to minimum index value data  mewans 0 value index = TotalCounter =[10,2]
-    //next round 3 go to small value index =[10,3]
-    //next round 3 go to small value index =[10,3]
-    //all loop end we can take maximim value in totla counter becz we need the minimum time that to complete
-    //so find maxm valuer and return it
+//   for(let time of customers){
+//     //each customers represent as time and each customer will  assigned in small index
+//     const nextcounter = Totalcounters.indexOf(Math.min(...Totalcounters))
+//     Totalcounters[nextcounter] +=time
+//     //each coustomer come next loop first it wil go to minimum index 
+//     //eg  (queueTime([10, 2, 3, 3], 2));   initially we created Total counters as [0,0]
+//     //first loop 10 will go to small index= Total counter =[10,0]
+//     //next rounund 2 go to minimum index value data  mewans 0 value index = TotalCounter =[10,2]
+//     //next round 3 go to small value index =[10,3]
+//     //next round 3 go to small value index =[10,3]
+//     //all loop end we can take maximim value in totla counter becz we need the minimum time that to complete
+//     //so find maxm valuer and return it
 
               
-  }
-   return Math.max(...Totalcounters)
+//   }
+//    return Math.max(...Totalcounters)
+// }
+
+// console.log(queueTime([5, 3, 4], 1));    // Output: 12
+//  console.log(queueTime([10, 2, 3, 3], 2)); // Output: 10
+//  console.log(queueTime([2, 3, 10], 2));    // Output: 12
+
+
+/*95.As a part of this Kata, you need to create a function that when provided with a triplet, returns the index of the numerical element that lies between the other two elements.
+The input to the function will be an array of three distinct numbers (Haskell: a tuple).
+For example
+gimme([2, 3, 1]) => 0
+2 is the number that fits between 1 and 3 and the index of 2 in the input array is 0.
+Another example (just to make sure it is clear):
+gimme([5, 10, 14]) => 1
+10 is the number that fits between 5 and 14 and the index of 10 in the input array is 1.
+*/
+// function gimme (triplet) {
+// let min = triplet.indexOf(Math.min(...triplet))
+// let max =triplet.indexOf(Math.max(...triplet))
+// return triplet.findIndex((data,index) => {
+//    return index != min && index != max
+// })
+// }
+
+
+// console.log(gimme([2.1, 3.2, 1.4]));
+
+/*96
+[
+  "  *  ",
+  " *** ", 
+  "*****"
+]
+And a tower with 6 floors looks like this:
+
+[
+  "     *     ", 
+  "    ***    ", 
+  "   *****   ", 
+  "  *******  ", 
+  " ********* ", 
+  "***********"
+]
+*/
+
+function towerBuilder(nFloors) {
+ let tower =[];
+ for(let i=1;i<=nFloors;i++){
+   let space=" ".repeat(nFloors-i)
+   let print ="*".repeat((2*i)-1)
+   let total =space + print + space
+   tower.push(total)
+ }
+ return tower
 }
 
-console.log(queueTime([5, 3, 4], 1));    // Output: 12
- console.log(queueTime([10, 2, 3, 3], 2)); // Output: 10
- console.log(queueTime([2, 3, 10], 2));    // Output: 12
+console.log(towerBuilder(3));
