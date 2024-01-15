@@ -1582,15 +1582,59 @@ And a tower with 6 floors looks like this:
 ]
 */
 
-function towerBuilder(nFloors) {
- let tower =[];
- for(let i=1;i<=nFloors;i++){
-   let space=" ".repeat(nFloors-i)
-   let print ="*".repeat((2*i)-1)
-   let total =space + print + space
-   tower.push(total)
- }
- return tower
+// function towerBuilder(nFloors) {
+//  let tower =[];
+//  for(let i=1;i<=nFloors;i++){
+//    let space=" ".repeat(nFloors-i)
+//    let print ="*".repeat((2*i)-1)
+//    let total =space + print + space
+//    tower.push(total)
+//  }
+//  return tower
+// }
+
+// console.log(towerBuilder(3));
+
+
+/*97.Given a string of words, you need to find the highest scoring word.
+
+Each letter of a word scores points according to its position in the alphabet: a = 1, b = 2, c = 3 etc.
+
+For example, the score of abad is 8 (1 + 2 + 1 + 4).
+
+You need to return the highest scoring word as a string.
+
+If two words score the same, return the word that appears earliest in the original string.
+
+All letters will be lowercase and all inputs will be valid.
+
+
+
+*/
+
+function high(x){
+let seperate= x.split(" ")
+
+let highScore = 0;
+let heigestWord = "";
+
+function calculateWordValue(word) {
+  return word.split("").reduce((score,char) => score + char.charCodeAt(0) - 96,0 ); //ASCI VALUE OF a is 97 so substrating from 97-96 =a
+              //if b ascii 98 so 98-96=2 that is b and so on..
 }
 
-console.log(towerBuilder(3));
+for(const word of seperate){ //each words act as word varibale and iterate throug seperate array.
+  const score=calculateWordValue(word) //this will return each word ascii totl value     
+  if(score > highScore || (score === highScore  && seperate.indexOf(word) < seperate.indexOf(heigestWord))){//it willl savethe value to variable if the coming word value if heigher than previous
+                        //also check score = higg score and avoid earlier same  for this check qstn =return the word that appears earliest in the original string.
+                        //make sure the coming word index is higher than alredy saved valkue ignore it only save the small index
+    highScore=score;
+    heigestWord =word
+  }
+ 
+}
+
+return heigestWord
+
+}
+console.log(high('man i need a taxi up to ubud'));
