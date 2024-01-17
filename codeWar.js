@@ -1612,29 +1612,86 @@ All letters will be lowercase and all inputs will be valid.
 
 */
 
-function high(x){
-let seperate= x.split(" ")
+// function high(x){
+// let seperate= x.split(" ")
 
-let highScore = 0;
-let heigestWord = "";
+// let highScore = 0;
+// let heigestWord = "";
 
-function calculateWordValue(word) {
-  return word.split("").reduce((score,char) => score + char.charCodeAt(0) - 96,0 ); //ASCI VALUE OF a is 97 so substrating from 97-96 =a
-              //if b ascii 98 so 98-96=2 that is b and so on..
-}
+// function calculateWordValue(word) {
+//   return word.split("").reduce((score,char) => score + char.charCodeAt(0) - 96,0 ); //ASCI VALUE OF a is 97 so substrating from 97-96 =a
+//               //if b ascii 98 so 98-96=2 that is b and so on..
+// }
 
-for(const word of seperate){ //each words act as word varibale and iterate throug seperate array.
-  const score=calculateWordValue(word) //this will return each word ascii totl value     
-  if(score > highScore || (score === highScore  && seperate.indexOf(word) < seperate.indexOf(heigestWord))){//it willl savethe value to variable if the coming word value if heigher than previous
-                        //also check score = higg score and avoid earlier same  for this check qstn =return the word that appears earliest in the original string.
-                        //make sure the coming word index is higher than alredy saved valkue ignore it only save the small index
-    highScore=score;
-    heigestWord =word
+// for(const word of seperate){ //each words act as word varibale and iterate throug seperate array.
+//   const score=calculateWordValue(word) //this will return each word ascii totl value     
+//   if(score > highScore || (score === highScore  && seperate.indexOf(word) < seperate.indexOf(heigestWord))){//it willl savethe value to variable if the coming word value if heigher than previous
+//                         //also check score = higg score and avoid earlier same  for this check qstn =return the word that appears earliest in the original string.
+//                         //make sure the coming word index is higher than alredy saved valkue ignore it only save the small index
+//     highScore=score;
+//     heigestWord =word
+//   }
+ 
+// }
+
+// return heigestWord
+
+// }
+// console.log(high('man i need a taxi up to ubud'));
+
+
+
+/*98.
+Welcome.
+
+In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+
+If anything in the text isn't a letter, ignore it and don't return it.
+
+"a" = 1, "b" = 2, etc.
+
+Example
+alphabetPosition("The sunset sets at twelve o' clock.")
+Should return
+*/
+// function alphabetPosition(text) {
+// let array =[...text]
+//      array.forEach((data,index) => {
+//       array[index] =data.toLowerCase()
+//    })
+//   return array
+//  }
+
+
+//  console.log(alphabetPosition("TbaThe sunset sets at twelve o' clock."));
+
+
+// let trys=["A","b"]
+// trys.forEach((data) => {
+//   console.log(data.toLowerCase());
+// })
+
+
+/*99.The main idea is to count all the occurring characters in a string. If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
+What if the string is empty? Then the result should be empty object literal, {}.
+  test('aba', {'a': 2, 'b': 1});
+  test('ABC', {'A': 1, 'B': 1, 'C': 1});
+*/
+function count(string) {
+  if(!string){
+    return {};
   }
+  let out={}
+ let array = [...string]
+ for (let i = 0; i < array.length; i++) {
+   if (out[array[i]]) {
+    out[array[i]] +=1
+    
+   }else{
+    out[array[i]] =1
+   }
+ }
+ return out
  
 }
-
-return heigestWord
-
-}
-console.log(high('man i need a taxi up to ubud'));
+console.log(count("abaaabgggb"));
