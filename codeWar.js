@@ -1676,22 +1676,53 @@ Should return
 What if the string is empty? Then the result should be empty object literal, {}.
   test('aba', {'a': 2, 'b': 1});
   test('ABC', {'A': 1, 'B': 1, 'C': 1});
-*/
-function count(string) {
-  if(!string){
-    return {};
-  }
-  let out={}
- let array = [...string]
- for (let i = 0; i < array.length; i++) {
-   if (out[array[i]]) {
-    out[array[i]] +=1
+  NUMBER OF COUNTS OF LETTERS REPEATING
+// */
+// function count(string) {
+//   if(!string){
+//     return {};
+//   }
+//   let out={}
+//  let array = [...string]
+//  for (let i = 0; i < array.length; i++) {
+//    if (out[array[i]]) {
+//     out[array[i]] +=1
     
-   }else{
-    out[array[i]] =1
-   }
- }
- return out
+//    }else{
+//     out[array[i]] =1
+//    }
+//  }
+//  return out
  
+// }
+// console.log(count("abaaabgggb"));
+
+
+/*100.Write Number in Expanded Form
+You will be given a number and you will need to return it as a string in Expanded Form. For example:
+expandedForm(12); // Should return '10 + 2'
+expandedForm(42); // Should return '40 + 2'
+expandedForm(70304); // Should return '70000 + 300 + 4'*/
+function expandedForm(num) {
+  
+  if (typeof num !== 'number' || num < 0 || !Number.isInteger(num)) {
+    return 'Invalid input';
+  }
+
+  const numStr = num.toString(); //number converterd to strings 12
+  const result = [];
+
+  for (let i = 0; i < numStr.length; i++) { // 1
+    const digit = parseInt(numStr[i]);  //digit=1
+
+    if (digit !== 0) {            //true
+      const placeValue = digit * Math.pow(10, numStr.length - 1 - i); //(2,3)=2*2*2
+      result.push(placeValue); //d* 10* 2-1-0=10  1st = 1 * 10 ^1 = 10
+                                //2* 10 * 2-1-1=0  2nd=2* 10^0 =2*1= 2
+    }
+  }
+
+  return result.join('+')
 }
-console.log(count("abaaabgggb"));
+
+console.log(expandedForm(12));
