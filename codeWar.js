@@ -1739,21 +1739,45 @@ Examples
 [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
 
 */
-function findOdd(A) {
-  let array = [...A]
-  let numbers={}
-  for(let i =0 ;i<array.length ;i++){
-    if(numbers[array[i]]){
-       numbers[array[i]] +=1
+// function findOdd(A) {
+//   let array = [...A]
+//   let numbers={}
+//   for(let i =0 ;i<array.length ;i++){
+//     if(numbers[array[i]]){
+//        numbers[array[i]] +=1
+//     }else{
+//       numbers[array[i]] =1
+//     }
+//   }
+//   for(let keyIndicator in numbers){ //now keyIndicator indicate every key value inside 
+//     if(numbers[keyIndicator] % 2!= 0){
+//       return parseInt(keyIndicator)
+//     }
+//   }
+// }
+
+// console.log(findOdd([1,1,2]));
+
+/*102.You will be given an array of numbers. You have to sort the odd numbers in ascending order while leaving the even numbers at their original positions.
+Examples
+[7, 1]  =>  [1, 7]
+[5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
+[9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
+*/
+function sortArray(array) {
+  let oddNumbers = array.filter((data) => data %2!=0) //SEPERATED ODD NYUMBER
+  let sortedinOrder =oddNumbers.sort((a,b) => a- b) //SORTED THE ODD NUMBER
+  const result = array.map((data) => { //MAP IN MAIN ARRAY
+    if(data %2 !=0){ //IF THE ODD NUMBER FIND OUT WE ARE REPLACING THE CURRNT ODD NUMBER WITH 1ST INDEX OF SORTED ARARY
+     return sortedinOrder.shift() //SORTED ARRY SHIFT IS DELETE THE 1ST ELEMNT FROM SORTED ODD NUMBER BUT THAT DELETED NUMBER WILL RETRN TO THE CURRENT POSITON OF ARRAY
+                     
+     //SHIFTED ELEMENT IS REPLCAING THE ARRAY ELEMT POSITIN
+     // IF IAM USED POP THEN THE CURRENT POSITIN OF ARAY DATA WIL REPLCED BY LAST ELEMT OF SORTD ARRAY BCZZ POP REMOVING THE LAST ELELMTN
     }else{
-      numbers[array[i]] =1
+    return  data
     }
-  }
-  for(let keyIndicator in numbers){ //now keyIndicator indicate every key value inside 
-    if(numbers[keyIndicator] % 2!= 0){
-      return parseInt(keyIndicator)
-    }
-  }
+  })
+  return result
 }
 
-console.log(findOdd([1,1,2]));
+console.log(sortArray([5, 3, 2, 8, 1, 4]));
