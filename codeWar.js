@@ -1703,26 +1703,57 @@ You will be given a number and you will need to return it as a string in Expande
 expandedForm(12); // Should return '10 + 2'
 expandedForm(42); // Should return '40 + 2'
 expandedForm(70304); // Should return '70000 + 300 + 4'*/
-function expandedForm(num) {
+// function expandedForm(num) {
   
-  if (typeof num !== 'number' || num < 0 || !Number.isInteger(num)) {
-    return 'Invalid input';
-  }
+//   if (typeof num !== 'number' || num < 0 || !Number.isInteger(num)) {
+//     return 'Invalid input';
+//   }
 
-  const numStr = num.toString(); //number converterd to strings 12
-  const result = [];
+//   const numStr = num.toString(); //number converterd to strings 12
+//   const result = [];
 
-  for (let i = 0; i < numStr.length; i++) { // 1
-    const digit = parseInt(numStr[i]);  //digit=1
+//   for (let i = 0; i < numStr.length; i++) { // 1
+//     const digit = parseInt(numStr[i]);  //digit=1
 
-    if (digit !== 0) {            //true
-      const placeValue = digit * Math.pow(10, numStr.length - 1 - i); //(2,3)=2*2*2
-      result.push(placeValue); //d* 10* 2-1-0=10  1st = 1 * 10 ^1 = 10
-                                //2* 10 * 2-1-1=0  2nd=2* 10^0 =2*1= 2
+//     if (digit !== 0) {            //true
+//       const placeValue = digit * Math.pow(10, numStr.length - 1 - i); //(2,3)=2*2*2
+//       result.push(placeValue); //d* 10* 2-1-0=10  1st = 1 * 10 ^1 = 10
+//                                 //2* 10 * 2-1-1=0  2nd=2* 10^0 =2*1= 2
+//     }
+//   }
+
+//   return result.join('+')
+// }
+
+// console.log(expandedForm(12));
+
+
+/*101.Given an array of integers, find the one that appears an odd number of times.
+There will always be only one integer that appears an odd number of times.
+OBJECT ITERATION TIP QSTN
+Examples
+[7] should return 7, because it occurs 1 time (which is odd).
+[0] should return 0, because it occurs 1 time (which is odd).
+[1,1,2] should return 2, because it occurs 1 time (which is odd).
+[0,1,0,1,0] should return 0, because it occurs 3 times (which is odd).
+[1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
+
+*/
+function findOdd(A) {
+  let array = [...A]
+  let numbers={}
+  for(let i =0 ;i<array.length ;i++){
+    if(numbers[array[i]]){
+       numbers[array[i]] +=1
+    }else{
+      numbers[array[i]] =1
     }
   }
-
-  return result.join('+')
+  for(let keyIndicator in numbers){ //now keyIndicator indicate every key value inside 
+    if(numbers[keyIndicator] % 2!= 0){
+      return parseInt(keyIndicator)
+    }
+  }
 }
 
-console.log(expandedForm(12));
+console.log(findOdd([1,1,2]));
