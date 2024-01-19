@@ -1764,20 +1764,63 @@ Examples
 [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
 [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
 */
-function sortArray(array) {
-  let oddNumbers = array.filter((data) => data %2!=0) //SEPERATED ODD NYUMBER
-  let sortedinOrder =oddNumbers.sort((a,b) => a- b) //SORTED THE ODD NUMBER
-  const result = array.map((data) => { //MAP IN MAIN ARRAY
-    if(data %2 !=0){ //IF THE ODD NUMBER FIND OUT WE ARE REPLACING THE CURRNT ODD NUMBER WITH 1ST INDEX OF SORTED ARARY
-     return sortedinOrder.shift() //SORTED ARRY SHIFT IS DELETE THE 1ST ELEMNT FROM SORTED ODD NUMBER BUT THAT DELETED NUMBER WILL RETRN TO THE CURRENT POSITON OF ARRAY
+// function sortArray(array) {
+//   let oddNumbers = array.filter((data) => data %2!=0) //SEPERATED ODD NYUMBER
+//   let sortedinOrder =oddNumbers.sort((a,b) => a- b) //SORTED THE ODD NUMBER
+//   const result = array.map((data) => { //MAP IN MAIN ARRAY
+//     if(data %2 !=0){ //IF THE ODD NUMBER FIND OUT WE ARE REPLACING THE CURRNT ODD NUMBER WITH 1ST INDEX OF SORTED ARARY
+//      return sortedinOrder.shift() //SORTED ARRY SHIFT IS DELETE THE 1ST ELEMNT FROM SORTED ODD NUMBER BUT THAT DELETED NUMBER WILL RETRN TO THE CURRENT POSITON OF ARRAY
                      
-     //SHIFTED ELEMENT IS REPLCAING THE ARRAY ELEMT POSITIN
-     // IF IAM USED POP THEN THE CURRENT POSITIN OF ARAY DATA WIL REPLCED BY LAST ELEMT OF SORTD ARRAY BCZZ POP REMOVING THE LAST ELELMTN
-    }else{
-    return  data
-    }
-  })
-  return result
+//      //SHIFTED ELEMENT IS REPLCAING THE ARRAY ELEMT POSITIN
+//      // IF IAM USED POP THEN THE CURRENT POSITIN OF ARAY DATA WIL REPLCED BY LAST ELEMT OF SORTD ARRAY BCZZ POP REMOVING THE LAST ELELMTN
+//     }else{
+//     return  data
+//     }
+//   })
+//   return result
+// }
+
+// console.log(sortArray([5, 3, 2, 8, 1, 4]));
+
+
+
+/*103.wave("hello") => ["Hello", "hEllo", "heLlo", "helLo", "hellO"]*/
+
+// function wave(str){
+//   let array =[...str]
+//   let result =[]
+//   for (let i = 0; i < array.length; i++) {
+//       if(array[i] !== ' '){
+//       let letters=[...str]
+//       letters.splice(i,1,letters[i].toUpperCase());
+//       result.push(letters.join(''))
+//       }
+    
+//   }
+//   return result
+// }
+// console.log(wave("hello"));
+
+
+/*104.In this Kata, you will be given a string that may have mixed uppercase and lowercase letters and your task is to convert that string to either lowercase only or uppercase only based on:
+
+make as few changes as possible.
+if the string contains equal number of uppercase and lowercase letters, convert the string to lowercase.
+For example:
+
+solve("coDe") = "code". Lowercase characters > uppercase. Change only the "D" to lowercase.
+solve("CODe") = "CODE". Uppercase characters > lowecase. Change only the "e" to uppercase.
+solve("coDE") = "code". Upper == lowercase. Change all to lowe*/
+
+function solve(s){
+ 
+  let uppercase=s.match(/[A-Z]/g)
+  letters=[...s]
+  if(uppercase !== null){
+    return uppercase.length > (letters.length)/2 ? letters.map((data) => data.toUpperCase()).join(""):letters.map((data) => data.toLowerCase()).join("")
+  }
+  return s
+ 
 }
 
-console.log(sortArray([5, 3, 2, 8, 1, 4]));
+console.log(solve("coDE"));
