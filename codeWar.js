@@ -1812,15 +1812,40 @@ solve("coDe") = "code". Lowercase characters > uppercase. Change only the "D" to
 solve("CODe") = "CODE". Uppercase characters > lowecase. Change only the "e" to uppercase.
 solve("coDE") = "code". Upper == lowercase. Change all to lowe*/
 
-function solve(s){
+// function solve(s){
  
-  let uppercase=s.match(/[A-Z]/g)
-  letters=[...s]
-  if(uppercase !== null){
-    return uppercase.length > (letters.length)/2 ? letters.map((data) => data.toUpperCase()).join(""):letters.map((data) => data.toLowerCase()).join("")
+//   let uppercase=s.match(/[A-Z]/g)
+//   letters=[...s]
+//   if(uppercase !== null){
+//     return uppercase.length > (letters.length)/2 ? letters.map((data) => data.toUpperCase()).join(""):letters.map((data) => data.toLowerCase()).join("")
+//   }
+//   return s
+ 
+// }
+
+// console.log(solve("coDE"));
+
+
+/*105.Your task, is to create N×N multiplication table, of size provided in parameter.
+For example, when given size is 3:
+1 2 3
+2 4 6
+3 6 9
+For the given example, the return value should be:
+[[1,2,3],[2,4,6],[3,6,9]] */
+
+multiplicationTable = function(size) {
+  let last=[]
+  for(let j=1;j<=size;j++){
+    let result=[]
+    for(let i=1;i<=size;i++){
+      result.push(i*j)
+     }
+
+    last.push(result)
   }
-  return s
- 
+
+return last
 }
 
-console.log(solve("coDE"));
+console.log(multiplicationTable(3));
