@@ -1927,20 +1927,58 @@ if you want to translate, please ask before translating. */
       assert.deepEqual(sumDigPow(90, 100), [])
 */
 
-function sumDigPow(a,b) {
+// function sumDigPow(a,b) {
 
-  let result=[]
-  for (let i = a; i <= b; i++) {
-    let num=i.toString().split("")
-    let sum=num.map((data,index) => {
-      return Math.pow(Number(data),index+1)
-  }).reduce((acc,data) => acc+ data ,0)
-    if(sum === i){
-      result.push(i)
-    }
-    
-  }
-return result
+//   let result=[]
+//   for (let i = a; i <= b; i++) {
+//     let num=i.toString().split("")
+//     let sum=num.map((data,index) => {
+//       return Math.pow(Number(data),index+1)
+//   }).reduce((acc,data) => acc+ data ,0)
+//     if(sum === i){
+//       result.push(i)
+//     }
+
+//   }
+// return result
+// }
+// console.log(sumDigPow(1, 10));
+
+
+
+/*108.* url = "http://github.com/carbonfive/raygun" -> domain name = "github"
+* url = "http://www.zombie-bites.com"         -> domain name = "zombie-bites"
+* url = "https://www.cnet.com"                -> domain name = cnet"
+
+*/
+function extractDomain(url) {
+  // Remove protocol (http, https, ftp, etc.)
+  let withoutHTTP = url.replace(/^(https?|ftp):\/\//, ''); //QST  MARK MAKE S OPIONAL AND IT CHECK HTTP HTTPS FTSP AND IT WILL REMOVE OF REPLACE BY "" \ this method indicate that it denoting after this a symbol to check
+  console.log(withoutHTTP);
+
+  // Remove www if present
+  let withoutWWW = withoutHTTP.replace(/^www\./, '');  //IT WILL REPLCE WWW. FROM THE RMOVED HTTP THE \. INDICATE THAT FORWARD SLASH INDICATE THE . IS TO CHECK SO THE SYBOLS COME AFTER FORWARD SLASH
+
+  console.log(withoutWWW);
+  // Extract domain name (the part before the first slash)
+  let domain = withoutWWW.split('/'); //IT WILL SPLIT BY / AND TAKE THE FIRST ONE
+  console.log(domain);
+
+  let result=withoutWWW.split('/')[0]
+  return result;
 }
 
-console.log(sumDigPow(1, 10));
+// Example usage:
+// let url1 = "http://github.com/carbonfive/raygun";
+// let domain1 = extractDomain(url1);
+// console.log(domain1);
+
+// let url2 = "http://www.zombie-bites.com";
+// let domain2 = extractDomain(url2);
+// console.log("Domain for " + url2 + ": " + domain2);
+
+// let url3 = "https://www.cnet.com";
+// let domain3 = extractDomain(url3);
+// console.log("Domain for " + url3 + ": " + domain3);
+
+console.log(extractDomain("http://google.com"));
