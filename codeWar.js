@@ -1982,3 +1982,48 @@ function extractDomain(url) {
 // console.log("Domain for " + url3 + ": " + domain3);
 
 console.log(extractDomain("http://google.com"));
+
+
+
+
+
+/* 109. Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+
+For example:
+
+uniqueInOrder('AAAABBBCCDAABBB') == ['A', 'B', 'C', 'D', 'A', 'B']
+uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
+uniqueInOrder([1,2,2,3,3])       == [1,2,3]
+*/
+
+var uniqueInOrder=function(iterable){
+ 
+  let trial=[...new Set(iterable)]
+  console.log(trial);
+}
+
+console.log(uniqueInOrder('AAAABBBCCDAABBB'));
+
+
+
+
+//UNIWQUNESS DIFFERENT QSTN
+
+var uniqueInOrderCons=function(datas){
+ 
+  if (!datas || datas.length === 0) { //IF NULL OR  EMPTY 
+    return [];
+  }
+  
+  let result = [datas[0]];  //THE FINAL RESULT IS PUSHING TO THIS .INITIALY IT CONSIST 1 ELEMENT THAT IS THE 1ST ELEMENT OF GIVEN ARRY BCZ IN CHECKING 0 INDEX NOT CHEK SO IT PLACEED HERE ALWYAS
+  
+  for (let i = 1; i < datas.length; i++) { //LOOOP STRT FROM INDEX 1. NOT FROM 0 . BCZ IT ALWAYS COMPARING WITH PREVIOUS ELEMENTS ,SO THE 0 INDEX DOES NOT HAVE THE PVS ELEMENT SO START FROM THE INDEX 1
+    if (datas[i] !== datas[i - 1]) {
+      result.push(datas[i]);
+    }
+  }
+
+  return result
+}
+
+console.log(uniqueInOrderCons('ABBCcAD'));
