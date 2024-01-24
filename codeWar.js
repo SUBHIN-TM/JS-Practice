@@ -1996,34 +1996,66 @@ uniqueInOrder('ABBCcAD')         == ['A', 'B', 'C', 'c', 'A', 'D']
 uniqueInOrder([1,2,2,3,3])       == [1,2,3]
 */
 
-var uniqueInOrder=function(iterable){
+// var uniqueInOrder=function(iterable){
  
-  let trial=[...new Set(iterable)]
-  console.log(trial);
-}
+//   let trial=[...new Set(iterable)]
+//   console.log(trial);
+// }
 
-console.log(uniqueInOrder('AAAABBBCCDAABBB'));
+// console.log(uniqueInOrder('AAAABBBCCDAABBB'));
 
 
 
 
 //UNIWQUNESS DIFFERENT QSTN
 
-var uniqueInOrderCons=function(datas){
+// var uniqueInOrderCons=function(datas){
  
-  if (!datas || datas.length === 0) { //IF NULL OR  EMPTY 
-    return [];
-  }
+//   if (!datas || datas.length === 0) { //IF NULL OR  EMPTY 
+//     return [];
+//   }
   
-  let result = [datas[0]];  //THE FINAL RESULT IS PUSHING TO THIS .INITIALY IT CONSIST 1 ELEMENT THAT IS THE 1ST ELEMENT OF GIVEN ARRY BCZ IN CHECKING 0 INDEX NOT CHEK SO IT PLACEED HERE ALWYAS
+//   let result = [datas[0]];  //THE FINAL RESULT IS PUSHING TO THIS .INITIALY IT CONSIST 1 ELEMENT THAT IS THE 1ST ELEMENT OF GIVEN ARRY BCZ IN CHECKING 0 INDEX NOT CHEK SO IT PLACEED HERE ALWYAS
   
-  for (let i = 1; i < datas.length; i++) { //LOOOP STRT FROM INDEX 1. NOT FROM 0 . BCZ IT ALWAYS COMPARING WITH PREVIOUS ELEMENTS ,SO THE 0 INDEX DOES NOT HAVE THE PVS ELEMENT SO START FROM THE INDEX 1
-    if (datas[i] !== datas[i - 1]) {
-      result.push(datas[i]);
-    }
-  }
+//   for (let i = 1; i < datas.length; i++) { //LOOOP STRT FROM INDEX 1. NOT FROM 0 . BCZ IT ALWAYS COMPARING WITH PREVIOUS ELEMENTS ,SO THE 0 INDEX DOES NOT HAVE THE PVS ELEMENT SO START FROM THE INDEX 1
+//     if (datas[i] !== datas[i - 1]) {
+//       result.push(datas[i]);
+//     }
+//   }
 
-  return result
-}
+//   return result
+// }
 
-console.log(uniqueInOrderCons('ABBCcAD'));
+// console.log(uniqueInOrderCons('ABBCcAD'));
+
+
+
+
+
+/*110.Given a 2D ( nested ) list ( array, vector, .. ) of size m * n, your task is to find the sum of the minimum values in each row.
+
+For Example:
+
+[ [ 1, 2, 3, 4, 5 ]        #  minimum value of row is 1
+, [ 5, 6, 7, 8, 9 ]        #  minimum value of row is 5
+, [ 20, 21, 34, 56, 100 ]  #  minimum value of row is 20
+]
+So the function should return 26 because the sum of the minimums is 1 + 5 + 20 = 26.
+
+Note: You will always be given a non-empty list containing positive values.
+
+ENJOY CODING :)
+
+*/
+// function sumOfMinimums(arr) {
+//   let small=[];
+// arr.map((data) => {
+//   let min= Math.min(...data)
+//   small.push(min)
+// })
+// return small.reduce((acc,data) => acc + data ,0)
+// }
+// console.log(sumOfMinimums([[7, 9, 8, 6, 2], [6, 3, 5, 4, 3], [5, 8, 7, 4, 5]]));
+
+
+
