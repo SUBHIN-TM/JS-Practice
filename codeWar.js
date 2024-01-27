@@ -1678,6 +1678,7 @@ What if the string is empty? Then the result should be empty object literal, {}.
   test('ABC', {'A': 1, 'B': 1, 'C': 1});
   NUMBER OF COUNTS OF LETTERS REPEATING
 // */
+
 // function count(string) {
 //   if(!string){
 //     return {};
@@ -1951,22 +1952,22 @@ if you want to translate, please ask before translating. */
 * url = "https://www.cnet.com"                -> domain name = cnet"
 
 */
-function extractDomain(url) {
-  // Remove protocol (http, https, ftp, etc.)
-  let withoutHTTP = url.replace(/^(https?|ftp):\/\//, ''); //QST  MARK MAKE S OPIONAL AND IT CHECK HTTP HTTPS FTSP AND IT WILL REMOVE OF REPLACE BY "" \ this method indicate that it denoting after this a symbol to check
-  console.log(withoutHTTP);
+// function extractDomain(url) {
+//   // Remove protocol (http, https, ftp, etc.)
+//   let withoutHTTP = url.replace(/^(https?|ftp):\/\//, ''); //QST  MARK MAKE S OPIONAL AND IT CHECK HTTP HTTPS FTSP AND IT WILL REMOVE OF REPLACE BY "" \ this method indicate that it denoting after this a symbol to check
+//   console.log(withoutHTTP);
 
-  // Remove www if present
-  let withoutWWW = withoutHTTP.replace(/^www\./, '');  //IT WILL REPLCE WWW. FROM THE RMOVED HTTP THE \. INDICATE THAT FORWARD SLASH INDICATE THE . IS TO CHECK SO THE SYBOLS COME AFTER FORWARD SLASH
+//   // Remove www if present
+//   let withoutWWW = withoutHTTP.replace(/^www\./, '');  //IT WILL REPLCE WWW. FROM THE RMOVED HTTP THE \. INDICATE THAT FORWARD SLASH INDICATE THE . IS TO CHECK SO THE SYBOLS COME AFTER FORWARD SLASH
 
-  console.log(withoutWWW);
-  // Extract domain name (the part before the first slash)
-  let domain = withoutWWW.split('/'); //IT WILL SPLIT BY / AND TAKE THE FIRST ONE
-  console.log(domain);
+//   console.log(withoutWWW);
+//   // Extract domain name (the part before the first slash)
+//   let domain = withoutWWW.split('/'); //IT WILL SPLIT BY / AND TAKE THE FIRST ONE
+//   console.log(domain);
 
-  let result=withoutWWW.split('/')[0]
-  return result;
-}
+//   let result=withoutWWW.split('/')[0]
+//   return result;
+// }
 
 // Example usage:
 // let url1 = "http://github.com/carbonfive/raygun";
@@ -1981,7 +1982,7 @@ function extractDomain(url) {
 // let domain3 = extractDomain(url3);
 // console.log("Domain for " + url3 + ": " + domain3);
 
-console.log(extractDomain("http://google.com"));
+// console.log(extractDomain("http://google.com"));
 
 
 
@@ -2007,7 +2008,7 @@ uniqueInOrder([1,2,2,3,3])       == [1,2,3]
 
 
 
-//UNIWQUNESS DIFFERENT QSTN
+//UNIQUNESS DIFFERENT QSTN
 
 // var uniqueInOrderCons=function(datas){
  
@@ -2059,3 +2060,69 @@ ENJOY CODING :)
 
 
 
+/*111.Write a function that takes an array of numbers (integers for the tests) and a target number. It should find two different items in the array that, when added together, give the target value. The indices of these items should then be returned in a tuple / list (depending on your language) like so: (index1, index2).
+
+For the purposes of this kata, some tests may have multiple answers; any valid solutions will be accepted.
+
+The input will always be valid (numbers will be an array of length 2 or greater, and all of the items will be numbers; target will always be the sum of two different items from that array).
+
+Based on: https://leetcode.com/problems/two-sum/
+
+twoSum([1, 2, 3], 4) // returns [0, 2] or [2, 0]
+twoSum([3, 2, 4], 6) // returns [1, 2] or [2, 1]
+*/
+// function twoSum(numbers, target) {
+//   let array =[...numbers]
+//  for (let i = 0; i < array.length-1; i++) {
+//       for (let j = i+1; j < array.length; j++) {
+//        if(array[i] + array[j] === target){
+//         return [i,j]
+//        }
+//       }
+//  }
+// }
+// console.log(twoSum([1, 2, 3],4));
+
+
+/*112Given a string, remove any characters that are unique from the string.
+
+Example:
+
+input: "abccdefee"
+
+output: "cceee"
+
+*/
+
+//IMPORTANT UNIQUE,COUNT,REPEAT
+function removeUniqueCharacters(str) {
+  let array =[...str]
+  let count = {};
+  for (let i = 0; i < array.length; i++) {
+   if(count[array[i]]){
+    count[array[i]]  +=1
+   }else{
+    count[array[i]]  =1
+   }
+  }
+
+  return array.filter((letters) => count[letters] > 1).join('')
+
+ 
+}
+
+console.log(removeUniqueCharacters('abccdefee'));
+
+
+// LETTERS COUNT REPEATING
+// let letters=['a','b','c','c']
+// let count={}
+//  for (let i = 0; i < letters.length; i++) {
+//   if(count[letters[i]]){
+//     count[letters[i]] +=1;
+//   }else{
+//     count[letters[i]] =1
+//   }
+//  }
+
+//  console.log(count);
