@@ -2094,24 +2094,24 @@ output: "cceee"
 
 */
 
-//IMPORTANT UNIQUE,COUNT,REPEAT
-function removeUniqueCharacters(str) {
-  let array =[...str]
-  let count = {};
-  for (let i = 0; i < array.length; i++) {
-   if(count[array[i]]){
-    count[array[i]]  +=1
-   }else{
-    count[array[i]]  =1
-   }
-  }
+// //IMPORTANT UNIQUE,COUNT,REPEAT
+// function removeUniqueCharacters(str) {
+//   let array =[...str]
+//   let count = {};
+//   for (let i = 0; i < array.length; i++) {
+//    if(count[array[i]]){
+//     count[array[i]]  +=1
+//    }else{
+//     count[array[i]]  =1
+//    }
+//   }
 
-  return array.filter((letters) => count[letters] > 1).join('')
+//   return array.filter((letters) => count[letters] > 1).join('')
 
  
-}
+// }
 
-console.log(removeUniqueCharacters('abccdefee'));
+// console.log(removeUniqueCharacters('abccdefee'));
 
 
 // LETTERS COUNT REPEATING
@@ -2126,3 +2126,34 @@ console.log(removeUniqueCharacters('abccdefee'));
 //  }
 
 //  console.log(count);
+
+
+
+/*113.Alternative using prototype
+*/
+// String.prototype.toAlternatingCase = function () {
+//  return this.split('').map((data) => {
+//   return data==data.toUpperCase()?data.toLowerCase():data.toUpperCase();
+//  }).join('')
+// }
+
+// var myString="hEllo";
+// console.log(myString.toAlternatingCase());
+
+
+/*114.You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
+
+Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
+
+[]                                -->  "no one likes this"
+["Peter"]                         -->  "Peter likes this"
+["Jacob", "Alex"]                 -->  "Jacob and Alex like this"
+["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
+["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 other like this 
+*/
+function likes(names) {
+ let length=names.length
+ return length == 0 ? "no one like this" :length==1 ? `${names[0]} likes this` : length ==2 ? `${names[0]} and ${names[1]} likes this`: length==3 ? `${names[0]}, ${names[1]} and ${names[2]}  likes this` :`${names[0]}, ${names[1]} and ${length-2} other like this`
+}
+
+console.log(likes(["Alex", "Jacob", "Mark", "Max"]));
