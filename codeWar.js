@@ -2151,9 +2151,43 @@ Implement the function which takes an array containing the names of people that 
 ["Max", "John", "Mark"]           -->  "Max, John and Mark like this"
 ["Alex", "Jacob", "Mark", "Max"]  -->  "Alex, Jacob and 2 other like this 
 */
-function likes(names) {
- let length=names.length
- return length == 0 ? "no one like this" :length==1 ? `${names[0]} likes this` : length ==2 ? `${names[0]} and ${names[1]} likes this`: length==3 ? `${names[0]}, ${names[1]} and ${names[2]}  likes this` :`${names[0]}, ${names[1]} and ${length-2} other like this`
-}
+// function likes(names) {
+//  let length=names.length
+//  return length == 0 ? "no one like this" :length==1 ? `${names[0]} likes this` : length ==2 ? `${names[0]} and ${names[1]} likes this`: length==3 ? `${names[0]}, ${names[1]} and ${names[2]}  likes this` :`${names[0]}, ${names[1]} and ${length-2} other like this`
+// }
 
-console.log(likes(["Alex", "Jacob", "Mark", "Max"]));
+// console.log(likes(["Alex", "Jacob", "Mark", "Max"]));
+
+
+/*114.Count the number of Duplicates
+Write a function that will return the count of distinct case-insensitive alphabetic characters and numeric digits that occur more than once in the input string. The input string can be assumed to contain only alphabets (both uppercase and lowercase) and numeric digits.
+Example
+"abcde" -> 0 # no characters repeats more than once
+"aabbcde" -> 2 # 'a' and 'b'
+"aabBcde" -> 2 # 'a' occurs twice and 'b' twice (`b` and `B`)
+"indivisibility" -> 1 # 'i' occurs six times
+"Indivisibilities" -> 2 # 'i' occurs seven times and 's' occurs twice
+"aA11" -> 2 # 'a' and '1'
+"ABBA" -> 2 # 'A' and 'B' each occur twice */
+
+function duplicateCount(text){
+  let array=[...text]
+  let count ={}
+  let totalCount=[]
+  let small=array.map((data) => data.toLowerCase())
+  for(let i=0;i<small.length;i++){
+    if(count[small[i]]){
+      count[small[i]] +=1;
+    }else{
+      count[small[i]] =1;
+    }
+  }
+ 
+  for(let key in count){
+    if(count[key] > 1){
+      totalCount.push(count[key])
+    }
+  }
+  return totalCount.length
+}
+console.log(duplicateCount('aabBcdeB'));
