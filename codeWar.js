@@ -2264,25 +2264,176 @@ Given a list and a number, create a new list that contains each number of list a
 For example if the input number is 2, and the input list is [1,2,3,1,2,1,2,3], you take [1,2,3,1,2], drop the next [1,2] since this would lead to 1 and 2 being in the result 3 times, and then take 3, which leads to [1,2,3,1,2,3].
 With list [20,37,20,21] and number 1, the result would be [20,37,21]. */
 
-function deleteNth(arr, n) {
-  let count = {};
-  let result = [];
+// function deleteNth(arr, n) {
+//   let count = {};
+//   let result = [];
 
-  for (let i = 0; i < arr.length; i++) {
-    let current = arr[i];
+//   for (let i = 0; i < arr.length; i++) {
+//     let current = arr[i];
 
-    if (count[current]) {
-      count[current] += 1;
-      if (count[current] <= n) {
-        result.push(current);
-      }
-    } else {
-      count[current] = 1;
-      result.push(current);
-    }
-  }
+//     if (count[current]) {
+//       count[current] += 1;
+//       if (count[current] <= n) {
+//         result.push(current);
+//       }
+//     } else {
+//       count[current] = 1;
+//       result.push(current);
+//     }
+//   }
 
-  return result;
+//   return result;
+// }
+
+// console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3));
+
+
+
+/*118
+Once upon a time, on a way through the old wild mountainous west,…
+… a man was given directions to go from one point to another. The directions were "NORTH", "SOUTH", "WEST", "EAST". Clearly "NORTH" and "SOUTH" are opposite, "WEST" and "EAST" too.
+
+Going to one direction and coming back the opposite direction right away is a needless effort. Since this is the wild west, with dreadful weather and not much water, it's important to save yourself some energy, otherwise you might die of thirst!
+
+How I crossed a mountainous desert the smart way.
+The directions given to the man are, for example, the following (depending on the language):
+
+["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"].
+or
+{ "NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST" };
+or
+[North, South, South, East, West, North, West]
+You can immediately see that going "NORTH" and immediately "SOUTH" is not reasonable, better stay to the same place! So the task is to give to the man a simplified version of the plan. A better plan in this case is simply:
+
+["WEST"]
+or
+{ "WEST" }
+or
+[West]
+Other examples:
+In ["NORTH", "SOUTH", "EAST", "WEST"], the direction "NORTH" + "SOUTH" is going north and coming back right away.
+
+The path becomes ["EAST", "WEST"], now "EAST" and "WEST" annihilate each other, therefore, the final result is [] (nil in Clojure).
+
+In ["NORTH", "EAST", "WEST", "SOUTH", "WEST", "WEST"], "NORTH" and "SOUTH" are not directly opposite but they become directly opposite after the reduction of "EAST" and "WEST" so the whole path is reducible to ["WEST", "WEST"].
+
+Task
+Write a function dirReduc which will take an array of strings and returns an array of strings with the needless directions removed (W<->E or S<->N side by side).
+
+The Haskell version takes a list of directions with data Direction = North | East | West | South.
+The Clojure version returns nil when the path is reduced to nothing.
+The Rust version takes a slice of enum Direction {North, East, West, South}.
+See more examples in "Sample Tests:"
+Notes
+Not all paths can be made simpler. The path ["NORTH", "WEST", "SOUTH", "EAST"] is not reducible. "NORTH" and "WEST", "WEST" and "SOUTH", "SOUTH" and "EAST" are not directly opposite of each other and can't become such. Hence the result path is itself : ["NORTH", "WEST", "SOUTH", "EAST"].
+if you want to translate, please ask before translating.
+*/
+
+// function dirReduc(arr){
+//   const opposite = {
+//     'NORTH': 'SOUTH',
+//     'SOUTH': 'NORTH',
+//     'EAST': 'WEST',
+//     'WEST': 'EAST'
+//   };
+
+//   let result = [];
+
+//   for (let eachDirection of arr) {
+//     if (result.length > 0 && result[result.length - 1] === opposite[eachDirection]) { //maek sure arry not empty,then select last pushed elelmnt and check it equlas the current dierction then 
+//       // If the current direction is opposite of the last one in the result, cancel them out
+//       result.pop();
+//     } else {
+//       // Otherwise, add the current direction to the result
+//       result.push(eachDirection);
+//     }
+//   }
+
+//   return result;
+// }
+// console.log(dirReduc(["NORTH", "WEST", "SOUTH", "EAST"]));
+
+
+
+/*119.
+This time we want to write calculations using functions and get the results. Let's have a look at some examples:
+
+seven(times(five())); // must return 35
+four(plus(nine())); // must return 13
+eight(minus(three())); // must return 5
+six(dividedBy(two())); // must return 3
+Requirements:
+how to do that in java script */
+
+
+function zero(operation) {
+  return operation ? operation(0) : 0;
 }
 
-console.log(deleteNth([1,1,3,3,7,2,2,2,2], 3));
+function one(operation) {
+  return operation ? operation(1) : 1;
+}
+
+function two(operation) {
+  return operation ? operation(2) : 2;
+}
+
+function three(operation) {
+  return operation ? operation(3) : 3;
+}
+
+function four(operation) {
+  return operation ? operation(4) : 4;
+}
+
+function five(operation) {
+  return operation ? operation(5) : 5;
+}
+
+function six(operation) {
+  return operation ? operation(6) : 6;
+}
+
+function seven(operation) {
+  return operation ? operation(7) : 7;
+}
+
+function eight(operation) {
+  return operation ? operation(8) : 8;
+}
+
+function nine(operation) {
+  return operation ? operation(9) : 9;
+}
+
+function plus(num) {
+  return function (x) {
+    return x + num;
+  };
+}
+
+function minus(num) {
+  return function (x) {
+    return x - num;
+  };
+}
+
+function times(num) {
+  return function (x) {
+    return x * num;
+  };
+}
+
+function dividedBy(num) {
+  return function (x) {
+    return x / num;
+  };
+}
+
+// Examples
+console.log(seven(times(five()))); // Output: 35  //IT FIRST CALL THE FIVE FUNCTION AND RETURN =5,SEVEN(TIMES(5))  THEN TIMES CALL WITH ARG 5 THEN RETRN, seven(function(x) { return x * 5; }).
+
+
+console.log(four(plus(nine())));    // Output: 13
+console.log(eight(minus(three()))); // Output: 5
+console.log(six(dividedBy(two())));  // Output: 3
