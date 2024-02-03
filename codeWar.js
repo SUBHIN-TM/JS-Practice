@@ -2366,74 +2366,182 @@ Requirements:
 how to do that in java script */
 
 
-function zero(operation) {
-  return operation ? operation(0) : 0;
-}
+// function zero(operation) {
+//   return operation ? operation(0) : 0;
+// }
 
-function one(operation) {
-  return operation ? operation(1) : 1;
-}
+// function one(operation) {
+//   return operation ? operation(1) : 1;
+// }
 
-function two(operation) {
-  return operation ? operation(2) : 2;
-}
+// function two(operation) {
+//   return operation ? operation(2) : 2;
+// }
 
-function three(operation) {
-  return operation ? operation(3) : 3;
-}
+// function three(operation) {
+//   return operation ? operation(3) : 3;
+// }
 
-function four(operation) {
-  return operation ? operation(4) : 4;
-}
+// function four(operation) {
+//   return operation ? operation(4) : 4;
+// }
 
-function five(operation) {
-  return operation ? operation(5) : 5;
-}
+// function five(operation) {
+//   return operation ? operation(5) : 5;
+// }
 
-function six(operation) {
-  return operation ? operation(6) : 6;
-}
+// function six(operation) {
+//   return operation ? operation(6) : 6;
+// }
 
-function seven(operation) {
-  return operation ? operation(7) : 7;
-}
+// function seven(operation) {
+//   return operation ? operation(7) : 7;
+// }
 
-function eight(operation) {
-  return operation ? operation(8) : 8;
-}
+// function eight(operation) {
+//   return operation ? operation(8) : 8;
+// }
 
-function nine(operation) {
-  return operation ? operation(9) : 9;
-}
+// function nine(operation) {
+//   return operation ? operation(9) : 9;
+// }
 
-function plus(num) {
-  return function (x) {
-    return x + num;
-  };
-}
+// function plus(num) {
+//   return function (x) {
+//     return x + num;
+//   };
+// }
 
-function minus(num) {
-  return function (x) {
-    return x - num;
-  };
-}
+// function minus(num) {
+//   return function (x) {
+//     return x - num;
+//   };
+// }
 
-function times(num) {
-  return function (x) {
-    return x * num;
-  };
-}
+// function times(num) {
+//   return function (x) {
+//     return x * num;
+//   };
+// }
 
-function dividedBy(num) {
-  return function (x) {
-    return x / num;
-  };
-}
+// function dividedBy(num) {
+//   return function (x) {
+//     return x / num;
+//   };
+// }
 
 // Examples
-console.log(seven(times(five()))); // Output: 35  //IT FIRST CALL THE FIVE FUNCTION AND RETURN =5,SEVEN(TIMES(5))  THEN TIMES CALL WITH ARG 5 THEN RETRN, seven(function(x) { return x * 5; }).
+// console.log(seven(times(five()))); // Output: 35  //IT FIRST CALL THE FIVE FUNCTION AND RETURN =5,SEVEN(TIMES(5))  THEN TIMES CALL WITH ARG 5 THEN RETRN, seven(function(x) { return x * 5; }).
 
 
-console.log(four(plus(nine())));    // Output: 13
-console.log(eight(minus(three()))); // Output: 5
-console.log(six(dividedBy(two())));  // Output: 3
+// console.log(four(plus(nine())));    // Output: 13
+// console.log(eight(minus(three()))); // Output: 5
+// console.log(six(dividedBy(two())));  // Output: 3
+
+
+/*120.
+Given a two-dimensional array of integers, return the flattened version of the array with all the integers in the sorted (ascending) order.
+Example:
+Given [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]], your function should return [1, 2, 3, 4, 5, 6, 7, 8, 9].
+Addendum:
+Please, keep in mind, that JavaScript is by default sorting objects alphabetically. For more information, please consult: */
+// function flattenAndSort(array) {
+//  return array.flat().sort((a,b) => a-b)
+// }
+
+// console.log(flattenAndSort([[3, 2, 1], [7, 9, 8], [6, 4, 5]]));
+
+
+
+/*121
+You are given an odd-length array of integers, in which all of them are the same, except for one single number.
+
+Complete the method which accepts such an array, and returns that single different number.
+
+The input array will always be valid! (odd-length >= 3)
+*/
+// function stray(numbers) {
+//   const dir={}
+//  for(let i =0;i<numbers.length;i++){
+//    if(dir[numbers[i]]){
+//      dir[numbers[i]] +=1
+//    }else{
+//       dir[numbers[i]] =1
+//    }
+//  }
+//   for(let key in dir){
+//     if(dir[key] == 1){
+//       return parseInt(key)
+//     }
+//   }
+// }
+
+// console.log(stray([1, 1, 2]));
+
+
+
+
+
+/*122.Sum of Pairs
+Given a list of integers and a single sum value, return the first two values (parse from the left please) in order of appearance that add up to form the sum.
+
+If there are two or more pairs with the required sum, the pair whose second element has the smallest index is the solution.
+
+sum_pairs([11, 3, 7, 5],         10)
+#              ^--^      3 + 7 = 10
+== [3, 7]
+
+sum_pairs([4, 3, 2, 3, 4],         6)
+#          ^-----^         4 + 2 = 6, indices: 0, 2 *
+#             ^-----^      3 + 3 = 6, indices: 1, 3
+#                ^-----^   2 + 4 = 6, indices: 2, 4
+#  * the correct answer is the pair whose second value has the smallest index
+== [4, 2]
+
+sum_pairs([0, 0, -2, 3], 2)
+#  there are no pairs of values that can be added to produce 2.
+== None/nil/undefined (Based on the language)
+
+sum_pairs([10, 5, 2, 3, 7, 5],         10)
+#              ^-----------^   5 + 5 = 10, indices: 1, 5
+#                    ^--^      3 + 7 = 10, indices: 3, 4 *
+#  * the correct answer is the pair whose second value has the smallest index
+== [3, 7] */
+
+
+function sumPairs(ints, s) {
+  const unique = new Set(); //IT DECLARED A NEW SET `
+ 
+  for (let i = 0; i < ints.length; i++) {
+    const current = ints[i];
+    const complement = s - current; //IT CHECK THE COMBINATION ELEMTN VALUE
+
+    if (unique.has(complement)) { //IT CHECK THAT NUMBER EXIST OR NOT 
+      return [complement, current]; //THAT NUMBER THERE IT WILL RETURN
+    }
+
+    unique.add(current); //IF DOES NOT FIND IT WIL PUSH THE CURRNT ELEMENT TO IT
+  }
+
+  return undefined; // No pair found
+}
+
+ //console.log(sumPairs([11, 3, 7, 5], 10)); // [3, 7]
+// console.log(sumPairs([4, 3, 2, 3, 4], 6)); // [4, 2]
+// console.log(sumPairs([0, 0, -2, 3], 2)); // undefined
+// console.log(sumPairs([10, 5, 2, 3, 7, 5], 10)); // [3, 7]
+// console.log(sumPairs([1, 4, 8, 7, 3, 15], 8)); // [1, 7]
+
+
+
+
+//SET EXAMPLE and has properities
+const mySet = new Set();
+
+mySet.add(1);
+mySet.add(2);
+mySet.add(3);
+mySet.add(3);
+
+console.log(mySet); // Set { 1, 2, 3 }
+console.log(mySet.has(3))
