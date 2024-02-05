@@ -2509,22 +2509,22 @@ sum_pairs([10, 5, 2, 3, 7, 5],         10)
 == [3, 7] */
 
 
-function sumPairs(ints, s) {
-  const unique = new Set(); //IT DECLARED A NEW SET `
+// function sumPairs(ints, s) {
+//   const unique = new Set(); //IT DECLARED A NEW SET `
  
-  for (let i = 0; i < ints.length; i++) {
-    const current = ints[i];
-    const complement = s - current; //IT CHECK THE COMBINATION ELEMTN VALUE
+//   for (let i = 0; i < ints.length; i++) {
+//     const current = ints[i];
+//     const complement = s - current; //IT CHECK THE COMBINATION ELEMTN VALUE
 
-    if (unique.has(complement)) { //IT CHECK THAT NUMBER EXIST OR NOT 
-      return [complement, current]; //THAT NUMBER THERE IT WILL RETURN
-    }
+//     if (unique.has(complement)) { //IT CHECK THAT NUMBER EXIST OR NOT 
+//       return [complement, current]; //THAT NUMBER THERE IT WILL RETURN
+//     }
 
-    unique.add(current); //IF DOES NOT FIND IT WIL PUSH THE CURRNT ELEMENT TO IT
-  }
+//     unique.add(current); //IF DOES NOT FIND IT WIL PUSH THE CURRNT ELEMENT TO IT
+//   }
 
-  return undefined; // No pair found
-}
+//   return undefined; // No pair found
+// }
 
  //console.log(sumPairs([11, 3, 7, 5], 10)); // [3, 7]
 // console.log(sumPairs([4, 3, 2, 3, 4], 6)); // [4, 2]
@@ -2536,12 +2536,36 @@ function sumPairs(ints, s) {
 
 
 //SET EXAMPLE and has properities
-const mySet = new Set();
+// const mySet = new Set();
 
-mySet.add(1);
-mySet.add(2);
-mySet.add(3);
-mySet.add(3);
+// mySet.add(1);
+// mySet.add(2);
+// mySet.add(3);
+// mySet.add(3);
 
-console.log(mySet); // Set { 1, 2, 3 }
-console.log(mySet.has(3))
+// console.log(mySet); // Set { 1, 2, 3 }
+// console.log(mySet.has(3))
+
+
+
+
+
+
+/*123.An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+Example: (Input --> Output)
+"Dermatoglyphics" --> true "aba" --> false "moOse" --> false (ignore letter case)
+isIsogram "Dermatoglyphics" = true
+isIsogram "moose" = false
+isIsogram "aba" = false */
+
+
+function isIsogram(str){
+  let cases=str.toUpperCase().split("")
+  let unique=[...new Set(cases)]
+  return (unique.length == cases.length)
+  
+  
+  
+}
+
+console.log(isIsogram("aba"));
