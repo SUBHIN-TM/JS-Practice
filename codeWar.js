@@ -2559,13 +2559,124 @@ isIsogram "moose" = false
 isIsogram "aba" = false */
 
 
-function isIsogram(str){
-  let cases=str.toUpperCase().split("")
-  let unique=[...new Set(cases)]
-  return (unique.length == cases.length)
+// function isIsogram(str){
+//   let cases=str.toUpperCase().split("")
+//   let unique=[...new Set(cases)]
+//   return (unique.length == cases.length)
   
   
   
+// }
+
+// console.log(isIsogram("aba"));
+
+
+/*124.Given a string str, reverse it and omit all non-alphabetic characters.
+
+Example
+For str = "krishan", the output should be "nahsirk".
+
+For str = "ultr53o?n", the output should be "nortlu".
+
+Input/Output
+[input] string str
+A string consists of lowercase latin letters, digits and symbols.
+
+[output] a string*/
+
+// function reverseLetter(str) {
+
+//   return str.split("").filter((data) => /[a-zA-Z]/ .test(data)).reverse().join("")
+  
+// }
+// console.log(reverseLetter("ultr53o?n"));
+
+
+/*125.Write an algorithm that takes an array and moves all of the zeros to the end, preserving the order of the other elements.
+
+moveZeros([false,1,0,1,2,0,1,3,"a"]) // returns[false,1,1,2,1,3,"a",0,0]
+*/
+// function moveZeros(arr) {
+//     let zero=[]
+//   let nonzero=[]
+// arr.map((data) => {
+//   if(data === 0){
+//     zero.push(data)
+//   }else{
+//     nonzero.push(data)
+//   }
+// })
+
+// return nonzero.concat(zero)
+// }
+// console.log(moveZeros([1,2,0,1,0,1,0,3,0,1]));
+
+
+/*126
+Write a function named first_non_repeating_letter that takes a string input, and returns the first character that is not repeated anywhere in the string.
+
+For example, if given the input 'stress', the function should return 't', since the letter t only occurs once in the string, and occurs first in the string.
+
+As an added challenge, upper- and lowercase letters are considered the same character, but the function should return the correct case for the initial letter. For example, the input 'sTreSS' should return 'T'.
+
+If a string contains all repeating characters, it should return an empty string ("") or None -- see sample tests.
+
+*/
+
+
+
+
+// function firstNonRepeatingLetter(s) {
+
+//   const charCountStore = {}; //to store the counts of each character
+  
+ 
+//   const lowerCaseS = s.toLowerCase();  //all are converted to lowercase to compare the char count store
+  
+
+//   for (let char of lowerCaseS) { //iterate through lower caese array
+//     charCountStore[char] = (charCountStore[char] || 0) + 1;  //if it exist +1 or 0+1 if dont give or there may be a chance of undefined comes
+//   }
+  
+ 
+//   for (let i = 0; i < s.length; i++) {  //take each elenent and check the counrt of count store of it
+//     const char = lowerCaseS[i];  //in lowercase the same is in index with all lowercase . 
+//     if (charCountStore[char] === 1) {  //that value count if firsdt get 1 it return the same letter with index from s .
+//       return s[i];
+//     }
+//   }
+
+//   return "";
+// }
+
+// // Test cases
+// console.log(firstNonRepeatingLetter('stress'));  // Output: 't'
+// console.log(firstNonRepeatingLetter('sTreSS'));  // Output: 'T'
+
+
+
+
+/*127.Write a program that will calculate the number of trailing zeros in a factorial of a given number.
+N! = 1 * 2 * 3 *  ... * N
+Be careful 1000! has 2568 digits...
+For more info, see: http://mathworld.wolfram.com/Factorial.html
+Examples
+zeros(6) = 1
+# 6! = 1 * 2 * 3 * 4 * 5 * 6 = 720 --> 1 trailing zero
+zeros(12) = 2
+# 12! = 479001600 --> 2 trailing zeros*/
+
+
+function zeros(n) {
+    let counter = 0;
+    for (let i = 5;( n / i)  >= 1; i *= 5) {  // Continue the loop as long as n divided by i is greater than or equal to 1
+       //no of zero  always equal to no of factores of 5 ini it
+      // /So, when we calculate the factorial of a number, we count how many times the factorial can be divided by 5 (or its powers), as each factor of 5 contributes to a trailing zero in the result.
+        counter += Math.floor(n / i);
+    }
+    return counter;
 }
 
-console.log(isIsogram("aba"));
+
+console.log(zeros(6));   // Output: 1
+console.log(zeros(30));  // Output: 2
