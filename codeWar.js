@@ -2667,16 +2667,33 @@ zeros(12) = 2
 # 12! = 479001600 --> 2 trailing zeros*/
 
 
-function zeros(n) {
-    let counter = 0;
-    for (let i = 5;( n / i)  >= 1; i *= 5) {  // Continue the loop as long as n divided by i is greater than or equal to 1
-       //no of zero  always equal to no of factores of 5 ini it
-      // /So, when we calculate the factorial of a number, we count how many times the factorial can be divided by 5 (or its powers), as each factor of 5 contributes to a trailing zero in the result.
-        counter += Math.floor(n / i);
-    }
-    return counter;
+// function zeros(n) {
+//     let counter = 0;
+//     for (let i = 5;( n / i)  >= 1; i *= 5) {  // Continue the loop as long as n divided by i is greater than or equal to 1
+//        //no of zero  always equal to no of factores of 5 ini it
+//       // /So, when we calculate the factorial of a number, we count how many times the factorial can be divided by 5 (or its powers), as each factor of 5 contributes to a trailing zero in the result.
+//         counter += Math.floor(n / i);
+//     }
+//     return counter;
+// }
+
+
+// console.log(zeros(6));   // Output: 1
+// console.log(zeros(30));  // Output: 2
+
+
+/*128.What if we need the length of the words separated by a space to be added at the end of that same word and have it returned as an array?
+
+Example(Input --> Output)
+
+"apple ban" --> ["apple 5", "ban 3"]
+"you will win" -->["you 3", "will 4", "win 3"]
+Your task is to write a function that takes a String and returns an Array/list with the length of each word added to each element .
+
+Note: String will have at least one element; words will always be separated by a space. */
+
+function addLength(str) {
+return str.split(" ").map((data) => data + " "+ data.length)
 }
 
-
-console.log(zeros(6));   // Output: 1
-console.log(zeros(30));  // Output: 2
+console.log(addLength('apple ban'));
