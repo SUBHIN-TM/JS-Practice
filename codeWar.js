@@ -2682,43 +2682,50 @@ zeros(12) = 2
 // console.log(zeros(30));  // Output: 2
 
 
-/*128.What if we need the length of the words separated by a space to be added at the end of that same word and have it returned as an array?
 
-Example(Input --> Output)
-
-"apple ban" --> ["apple 5", "ban 3"]
-"you will win" -->["you 3", "will 4", "win 3"]
-Your task is to write a function that takes a String and returns an Array/list with the length of each word added to each element .
-
-Note: String will have at least one element; words will always be separated by a space. */
-
-// function addLength(str) {
-// return str.split(" ").map((data) => data + " "+ data.length)
-// }
-
-// console.log(addLength('apple ban'));
-
-
-/*In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. For example: 5! = 5 * 4 * 3 * 2 * 1 = 120. By convention the value of 0! is 1.
-
+/* 128.In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. For example: 5! = 5 * 4 * 3 * 2 * 1 = 120. By convention the value of 0! is 1.
 Write a function to calculate factorial for a given input. If input is below 0 or above 12 throw an exception of type ArgumentOutOfRangeException (C#) or IllegalArgumentException (Java) or RangeException (PHP) or throw a RangeError (JavaScript) or ValueError (Python) or return -1 (C).
-
 More details about factorial can be found here.
-
 */
 
-function factorial(n)
-{
-  if(n < 0 || n > 12){
-    throw new Error('RangeError')
-  }
-  let result=1
-  if(n==0){
-    return 1
-  }
-  for(let i=n;i>=1;i--){
-    result *=i
-  }
-  return result
-}
+// function factorial(n)
+// {
+//   if(n < 0 || n > 12){
+//     throw new Error('RangeError')
+//   }
+//   let result=1
+//   if(n==0){
+//     return 1
+//   }
+//   for(let i=n;i>=1;i--){
+//     result *=i
+//   }
+//   return result
+// }
 
+
+/*129Given a string, capitalize the letters that occupy even indexes and odd indexes separately, and return as shown below. Index 0 will be considered even.
+For example, capitalize("abcdef") = ['AbCdEf', 'aBcDeF']. See test cases for more examples.
+The input will be a lowercase string with no spaces.
+Good luck!
+If you like this Kata, please try:
+Indexed capitalization
+Even-odd disparity */
+
+
+function capitalize(s){
+  let even='';
+  let odd='';
+    for(let i=0;i<s.length;i++){
+      if(i%2 === 0){
+        even +=s[i].toUpperCase()
+        odd +=s[i]
+      }else{
+          odd +=s[i].toUpperCase()
+         even +=s[i]
+      }
+    }
+    return [even,odd]
+  };
+
+  console.log(capitalize('abcdef'));
