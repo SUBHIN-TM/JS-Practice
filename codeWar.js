@@ -2692,8 +2692,33 @@ Your task is to write a function that takes a String and returns an Array/list w
 
 Note: String will have at least one element; words will always be separated by a space. */
 
-function addLength(str) {
-return str.split(" ").map((data) => data + " "+ data.length)
+// function addLength(str) {
+// return str.split(" ").map((data) => data + " "+ data.length)
+// }
+
+// console.log(addLength('apple ban'));
+
+
+/*In mathematics, the factorial of a non-negative integer n, denoted by n!, is the product of all positive integers less than or equal to n. For example: 5! = 5 * 4 * 3 * 2 * 1 = 120. By convention the value of 0! is 1.
+
+Write a function to calculate factorial for a given input. If input is below 0 or above 12 throw an exception of type ArgumentOutOfRangeException (C#) or IllegalArgumentException (Java) or RangeException (PHP) or throw a RangeError (JavaScript) or ValueError (Python) or return -1 (C).
+
+More details about factorial can be found here.
+
+*/
+
+function factorial(n)
+{
+  if(n < 0 || n > 12){
+    throw new Error('RangeError')
+  }
+  let result=1
+  if(n==0){
+    return 1
+  }
+  for(let i=n;i>=1;i--){
+    result *=i
+  }
+  return result
 }
 
-console.log(addLength('apple ban'));
