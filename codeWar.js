@@ -2713,19 +2713,36 @@ Indexed capitalization
 Even-odd disparity */
 
 
-function capitalize(s){
-  let even='';
-  let odd='';
-    for(let i=0;i<s.length;i++){
-      if(i%2 === 0){
-        even +=s[i].toUpperCase()
-        odd +=s[i]
-      }else{
-          odd +=s[i].toUpperCase()
-         even +=s[i]
-      }
-    }
-    return [even,odd]
-  };
+// function capitalize(s){
+//   let even='';
+//   let odd='';
+//     for(let i=0;i<s.length;i++){
+//       if(i%2 === 0){
+//         even +=s[i].toUpperCase()
+//         odd +=s[i]
+//       }else{
+//           odd +=s[i].toUpperCase()
+//          even +=s[i]
+//       }
+//     }
+//     return [even,odd]
+//   };
 
-  console.log(capitalize('abcdef'));
+//   console.log(capitalize('abcdef'));
+
+
+/*130.Complete the function which returns the weekday according to the input number:
+1 returns "Sunday"
+2 returns "Monday"
+3 returns "Tuesday"
+4 returns "Wednesday"
+5 returns "Thursday"
+6 returns "Friday"
+7 returns "Saturday"
+Otherwise returns "Wrong, please enter a number between 1 and 7" */
+
+function whatday(num) { 
+let defined={1:'Sunday',2:'Monday',3:'Tuesday',4:'Wednesday',5:'Thursday',6:'Friday',7:'Saturday'}
+return defined[num] ? defined[num]:'Wrong, please enter a number between 1 and 7'
+}
+console.log(whatday(1));
