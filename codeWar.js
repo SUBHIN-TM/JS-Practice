@@ -2781,20 +2781,28 @@ Attention: If the number has leading zeros the amount of digits should be consid
 // console.log(incrementString('foo0042'));
 
 
+
+
 /*132Define a method hello that returns "Hello, Name!" to a given name, or says Hello, World! if name is not given (or passed as an empty String).
-
 Assuming that name is a String and it checks for user typos to return a name with a first capital letter (Xxxx).
-
 Examples:
-
 * With `name` = "john"  => return "Hello, John!"
 * With `name` = "aliCE" => return "Hello, Alice!"
 * With `name` not given */
 
-function hello(name) {
-  if(!name){
-    return "Hello, World!"
+// function hello(name) {
+//   if(!name){
+//     return "Hello, World!"
+//   }
+//   return `Hello, ${name[0].toUpperCase() + name.slice(1).toLowerCase()}!`
+// }
+// console.log(hello(""));
+
+
+/*133.Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
+[1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24*/
+function grow(x){
+  return x.reduce((acc,data) => acc * data,1)
   }
-  return `Hello, ${name[0].toUpperCase() + name.slice(1).toLowerCase()}!`
-}
-console.log(hello(""));
+
+  console.log(grow([1,2,3]));
