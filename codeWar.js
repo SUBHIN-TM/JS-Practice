@@ -2761,21 +2761,40 @@ foo099 -> foo100
 Attention: If the number has leading zeros the amount of digits should be considered. */
 
 
-function incrementString (strng) {
-  const regex = /(\d*)$/;
-  let numberPart=strng.match(regex)[0]//it wil l return arry contain more details at the 0 indeex giv4 the exact numbers
-  if(!numberPart){
-    return strng+1
-  }else{
-   let numberLength=numberPart.length
-   let incremented=parseInt(numberPart, 10) + 1
-   let incrementedStr = incremented.toString();
-   let zerosNeeded = numberLength - incrementedStr.length;
+// function incrementString (strng) {
+//   const regex = /(\d*)$/;
+//   let numberPart=strng.match(regex)[0]//it wil l return arry contain more details at the 0 indeex giv4 the exact numbers
+//   if(!numberPart){
+//     return strng+1
+//   }else{
+//    let numberLength=numberPart.length
+//    let incremented=parseInt(numberPart, 10) + 1
+//    let incrementedStr = incremented.toString();
+//    let zerosNeeded = numberLength - incrementedStr.length;
 
-   let leadingZeros = zerosNeeded > 0 ? '0'.repeat(zerosNeeded) : '';
-   let replaced= strng.slice(0,-numberLength)
-   return replaced + leadingZeros + incrementedStr;
+//    let leadingZeros = zerosNeeded > 0 ? '0'.repeat(zerosNeeded) : '';
+//    let replaced= strng.slice(0,-numberLength)
+//    return replaced + leadingZeros + incrementedStr;
    
+//   }
+// }
+// console.log(incrementString('foo0042'));
+
+
+/*132Define a method hello that returns "Hello, Name!" to a given name, or says Hello, World! if name is not given (or passed as an empty String).
+
+Assuming that name is a String and it checks for user typos to return a name with a first capital letter (Xxxx).
+
+Examples:
+
+* With `name` = "john"  => return "Hello, John!"
+* With `name` = "aliCE" => return "Hello, Alice!"
+* With `name` not given */
+
+function hello(name) {
+  if(!name){
+    return "Hello, World!"
   }
+  return `Hello, ${name[0].toUpperCase() + name.slice(1).toLowerCase()}!`
 }
-console.log(incrementString('foo0042'));
+console.log(hello(""));
