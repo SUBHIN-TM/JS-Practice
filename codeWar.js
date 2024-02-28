@@ -2801,8 +2801,30 @@ Examples:
 
 /*133.Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
 [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24*/
-function grow(x){
-  return x.reduce((acc,data) => acc * data,1)
-  }
+// function grow(x){
+//   return x.reduce((acc,data) => acc * data,1)
+//   }
 
-  console.log(grow([1,2,3]));
+//   console.log(grow([1,2,3]));
+
+
+
+// 134.Replace all vowel to exclamation mark in the sentence. aeiouAEIOU is vowel.
+// Examples
+// replace("Hi!") === "H!!"
+// replace("!Hi! Hi!") === "!H!! H!!"
+// replace("aeiou") === "!!!!!"
+// replace("ABCDE") === "!BCD!"
+
+function replace(s){
+  let result=""
+for(let i=0;i<s.length;i++){
+  if('AEIOUaeiou'.includes(s[i])){
+     result +="!"
+     }else{
+    result +=s[i]
+  }
+}
+return result
+}
+console.log(replace("KbmjJa Xhu KBP oNXOAt WDfL iFXIe TPkcwCZ wTAC"));
