@@ -2873,8 +2873,26 @@ Examples:
 // Write a program that returns the girl's age (0-9) as an integer.
 // Assume the test input string is always a valid string. For example, the test input may be "1 year old" or "5 years old". The first character in the string is always a number.
 
-function getAge(inputString){
-  return parseInt(inputString.slice(0,1))
-  }
+// function getAge(inputString){
+//   return parseInt(inputString.slice(0,1))
+//   }
 
-  console.log(getAge("1 year old"));
+//   console.log(getAge("1 year old"));
+
+
+
+//138. If　a = 1, b = 2, c = 3 ... z = 26
+// Then l + o + v + e = 54
+// and f + r + i + e + n + d + s + h + i + p = 108
+// So friendship is twice as strong as love :-)
+// Your task is to write a function which calculates the value of a word based off the sum of the alphabet positions of its characters.
+// The input will always be made of only lowercase letters and will never be empty.
+
+
+function wordsToMarks(string){
+ let letters=string.split("")
+ let asc=letters.map((data) => data.charCodeAt(0) - 96)
+ return asc.reduce((acc,data) => acc + data ,0)
+}
+
+console.log(wordsToMarks("abc"));
