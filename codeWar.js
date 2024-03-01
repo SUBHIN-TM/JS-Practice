@@ -2889,10 +2889,23 @@ Examples:
 // The input will always be made of only lowercase letters and will never be empty.
 
 
-function wordsToMarks(string){
- let letters=string.split("")
- let asc=letters.map((data) => data.charCodeAt(0) - 96)
- return asc.reduce((acc,data) => acc + data ,0)
+// function wordsToMarks(string){
+//  let letters=string.split("")
+//  let asc=letters.map((data) => data.charCodeAt(0) - 96) //even splited index 0 means that induvidual letter
+//  return asc.reduce((acc,data) => acc + data ,0)
+// }
+
+// console.log(wordsToMarks("abc"));
+
+
+
+// 139.2 times reppeating
+
+function repeat(strs) {
+let letters=strs.split("")
+let result=""
+letters.map((data) => result +=data + data)
+return result
 }
 
-console.log(wordsToMarks("abc"));
+console.log(repeat("hello world"));
