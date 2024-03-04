@@ -2901,11 +2901,28 @@ Examples:
 
 // 139.2 times reppeating
 
-function repeat(strs) {
-let letters=strs.split("")
-let result=""
-letters.map((data) => result +=data + data)
-return result
-}
+// function repeat(strs) {
+// let letters=strs.split("")
+// let result=""
+// letters.map((data) => result +=data + data)
+// return result
+// }
 
-console.log(repeat("hello world"));
+// console.log(repeat("hello world"));
+
+
+//140.Given a string of digits, you should replace any digit below 5 with '0' and any digit 5 and above with '1'. Return the resulting string.
+// Note: input will never be an empty string
+
+// function fakeBin(x) {
+// return x.split("").reduce((acc,data) => {
+//   if(data < 5){
+//     acc.push(0)
+//   }else{
+//     acc.push(1)
+//   }
+//   return acc;
+// },[]).join("")
+// }
+
+// console.log(fakeBin("45385593107843568"));
