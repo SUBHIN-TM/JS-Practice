@@ -2926,3 +2926,34 @@ Examples:
 // }
 
 // console.log(fakeBin("45385593107843568"));
+
+
+
+// 141.Encrypt this!
+// You want to create secret messages which can be deciphered by the Decipher this! kata. Here are the conditions:
+// Your message is a string containing space separated words.
+// You need to encrypt each word in the message using the following rules:
+// The first letter must be converted to its ASCII code.
+// The second letter must be switched with the last letter
+// Keepin' it simple: There are no special characters in the input.
+// Examples:
+// encryptThis("Hello") === "72olle"
+// encryptThis("good") === "103doo"
+// encryptThis("hello world") === "104olle 119drlo"
+
+function encryptThis (text) {
+let out = ""
+text.split(" ").forEach((data) => {
+  if(data.length >2){
+    out += data.charCodeAt(0) + data[data.length -1] + data.slice(2,data.length -1) + data[1] 
+  }else if(data.length ==2){
+    out += data.charCodeAt(0) + data[1]
+  }else{
+    out += data.charCodeAt(0)
+  }
+  out += " "
+})
+return out.trim();
+}
+
+console.log(encryptThis("A wise old owl lived in an oak"));
